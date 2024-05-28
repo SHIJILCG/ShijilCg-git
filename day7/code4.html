@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let calculator={
+            read(){
+                 this.a=prompt("Enter first value");
+                 this.b=prompt("Enter the second value");
+            },
+            multi(){
+                alert(`${this.a}*${this.b}=${this.a*this.b}`);
+            },
+            div(){
+                 alert(`${this.a}/${this.b}=${this.a/this.b}`);
+            },
+            add(){
+                alert(`${this.a}+${this.b}=${+this.a + +this.b}`);
+            },
+            sub(){
+                alert(`${this.a}-${this.b}=${this.a-this.b}`);
+            },
+        };
+        calculator.read();
+        let op=prompt("Enter the opertor");
+        if(op === '+'){
+            calculator.add();
+        }else if(op === '-'){
+           calculator.sub();
+
+        }else if(op === '/'){
+           calculator.div();
+
+        }else if(op === '*'){
+           calculator.multi();
+
+        }else{
+            alert("Enter valid symbol");
+        }    
+    </script>
+<body>  
+</body>
+</html>

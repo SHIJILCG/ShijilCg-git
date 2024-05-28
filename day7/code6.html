@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    alert("WELCOME TO THE BANK");
+    let b = prompt(
+      "SELECT THE OPTION \n1.VIEW BANK ACCOUNT DETAILS\n2.WITHDRAW MONEY"
+    );
+    if (b === "1") {
+         alert("NAME:SHIJIL C\nAGE:20\nPH:2345543234");
+    } else if (b === "2") {
+      let a = prompt("ENTER THE AMOUNT OF MONEY TO WITHDRAW");
+      let c = prompt("ENTER THE PASSOWARD");
+      if (a < 5000 && c === "123") {
+        alert("MONEY WITHDRAWEL SUCCESSFULL");
+      }
+      else if(a>5000){
+          alert("MAXIMUM WITHDRAW MONEY IS 5000");
+      }else if(c!='123'){
+         alert("WRONG PASSWORD");
+      }else{
+        alert("SOMETHING WENT WRONG");
+      }
+    } else {
+       alert("SELECT GIVEN OPTION");
+    }
+  </script>
+  <body></body>
+</html>

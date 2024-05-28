@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+     <script>
+        // let uses= new Object();
+        // let users={};
+        let users={
+            name:"john",
+            age:30
+        };
+        alert(users.name);
+        alert(users.age);
+        let user={
+            name:"john",
+            age:30,
+            "like birds":true
+        };
+        let users2={};
+        user["like birds"]=true;
+        alert(user["like birds"]);
+        delete user["like birds"];
+        let key1 ="likes birds";
+        user[key1]=true;
+        let users1={
+           name:"john",
+           age:30
+        };
+        let key2 =prompt("What do you want to know about users?");
+        alert(users[key]);
+        let uses={
+            name:"john",
+            age:30
+        };
+        let key ="name";
+        alert(user.kry);
+        let fruits=prompt("Which fruit to buy","apple");
+        let bag={
+            [fruits]:5,
+        };
+        alert(bag.apple);
+        let fruit=prompt("which fruit to buy","apple");
+        let bag2={
+            [fruit + 'computers']:5
+        };
+        function makeuser(name,age){
+            return{
+                name:name,
+                age:age,
+            };
+        }
+        let users91=makeusrs("john",30);
+        alert(user.name);
+        let obj={
+            for:1,
+            let:2,
+            return :3
+        };
+        alert(obj.for + obj.let + obj.return);
+        let obj1={
+            0:"test"
+        };
+        alert(obj["0"]);
+        alert(obj[0]);
+        let user={};
+        alert(user.noSuchproperty === undefined);
+        let user1={name:"john",age:30};
+        alert("age" in users);
+        alert("blabla" in user);
+        let user={age:30};
+        let key11="age";
+        alert(key in users);
+        let obj11={
+            test:undefined
+        };
+        alert(obj.test);
+        alert("test" in obj);
+        let user={
+            name:"shijil",
+            age:30,
+            isAdmin:true
+        };
+        for(let key in user){
+            alert(key);
+            alert(user[key]);
+
+        }
+        let code={
+            "49":"Germany",
+            "41":"Switzerland",
+            "44":"grete britain",
+            "1":"Usa"
+        };
+        for (let code in codes){
+            alert(code);   
+        }
+        
+     </script>
+</head>
+<body>
+</body>
+</html>

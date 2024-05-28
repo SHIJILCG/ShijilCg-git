@@ -1,0 +1,270 @@
+
+nav {
+  /* width: 50;
+  margin: auto; */
+  background-color: white;
+  padding: 20px;
+  position: sticky;
+  top: 0px;
+  z-index: 100000;
+}
+nav ul{
+    white-space: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+nav li{
+  width: 18%;
+  display: inline-block;
+  font-size: 10px;
+}
+nav li a{
+   text-decoration: none;
+   color:#4d2ca0 ;
+   font-size: 15px;
+   align-items: center;
+}
+.button1{
+  background-color: #628a05;
+  color: #000000;
+  border-color: aliceblue;
+  height: 40px;
+  border-radius: 8px;
+}
+div.wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  height: 60px;
+}
+div.wrapper img {
+  width: 30px;
+  padding: 20%;
+}
+div.wrapper a {
+  padding: 21px;
+}
+div.wrapper a:nth-child(5) {
+  padding: 60px;
+}
+
+div.wrapper button {
+  background-color: #89c402;
+  border: 1px solid #89c402;
+  box-sizing: border-box;
+  position: relative;
+  height: 40px;
+  border-radius: 4px;
+  color: #1a1a1f;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 9px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover {
+  background: var(--primary);
+  color: #89c402;
+}
+div.sign {
+  align-items: right;
+}
+im{
+  width: 100%;
+  display: flex;
+
+}
+.web{
+   position: relative;
+}
+img{
+     width: 100%;
+     display: block;
+
+     margin: auto;
+}
+.p1{
+  position:absolute;
+  top: 100px;
+  left: 150px;
+}
+.buttons{
+  display: flex;
+  padding: 20px;
+  position:absolute;
+  top: 450px;
+  left: 150px;
+  
+
+}
+/* div.three {
+ 
+  display: flex;
+  right: 50px;
+  align-items: center;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  height: 60px;
+  padding: 10px;
+}
+div.three a {
+  padding: 50px;
+}
+/* div.three button {
+  background-color: #89c402;
+  border: 1px solid #6f9e02;
+  box-sizing: border-box;
+  position: relative;
+  height: 35px;
+  width: 150px;
+  border-radius: 4px;
+  color: #1a1a1f;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 9px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+} */
+#heil{
+  margin-left:400px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  gap: 50px; /* Gap between grid items */
+  width: 1500px;
+  margin-left: 150px;
+  padding: 2%;
+  
+}
+
+.grid-item {
+  background-color:white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 19px;
+  border-color:white;
+  border-style: solid;
+ 
+}
+.thir{
+  margin-left: 200px;
+}
+.switch{
+  background-color: dodgerblue;
+  padding: 15px;
+}
+.ap{
+  display: flex;
+  align-items: center;
+
+
+}
+.sec{
+background-color: rgb(229, 230, 239);
+}
+.hee{
+margin-left: 9%;
+}
+.main-nav{
+margin-left: -400px;
+}
+.switches2{
+margin-left: 200px;
+}
+.switches2 button{
+border-radius: 20px;
+padding: 10px;
+font-size:100%;
+border: 0cap;
+}
+.scrolling{
+margin-top: 30px;
+margin-left: 200px;
+width: 400px;
+height: 492px;
+overflow: hidden;
+overflow-y: scroll;
+}
+.scrohom{
+display: flex;
+}
+.grid2{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  gap: 10px; /* Gap between grid items */
+  width: 1000px;
+  margin-left: 2px;
+ 
+
+}
+.gir{
+  background-color:white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 19px;
+  border-color:white;
+  border-style: solid;
+  
+ 
+}
+.img{
+  width: 300px;
+  height: 700px;
+  margin-left: 150px;
+  background-color:white;
+  text-align: center;
+  border-radius: 19px;
+  border-color:white;
+  border-style: solid;
+
+}
+.main{
+  padding: 70px;
+  gap: -10px;
+}
+.sq{
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-color: #000000;
+}
+.largrid{ 
+ /* Three columns with equal width *//* Gap between grid items */
+  width: 1336px;
+  height: 505px;
+  background: #ffffff;
+  margin-left: 200px;
+  margin-top: 200px;
+  border-radius: 15px;
+  
+}
+.iim{
+  height: 505px;
+  width: 665px;
+  margin-left: 700px;
+  border-radius: 15px;
+}
+.grid-container2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  gap: 10px; /* Gap between grid items */
+  width: 1320px;
+  margin-left: 200px;
+  
+}
+#language-selector {
+  padding: 10px;
+  border: 1px solid #ccc;
+     width: 188px;
+}
+
+

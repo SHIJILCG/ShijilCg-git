@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+     <script>
+        function sayhi(){
+            alert("hello");
+        }
+        let fun=sayhi;
+        fun();
+        sayhi();
+        function ask(question,yes,no){
+              if(confirm(question)) yes()
+              else no();
+        }
+        function showok(){
+            alert("you agreed");
+        }
+        function showcancel(){
+            alert("you canceled the execution");
+        }
+        ask("Do you agreed",showok,showcancel);
+        let age =prompt("What is your age",18);
+        if(age<18){
+            function welcome(){
+                alert("lello");
+            }
+        }else{
+            function wlcome(){
+                alrt("greeting");
+            }
+        }
+        welcome();
+        let age1=16;
+        if(age<18){
+            welcome();
+            function welcome(){
+                alert("hello");
+            }
+            welcome();
+        }else{
+            function welcome(){
+                alert("greetings");
+
+            }
+        }
+        welcome();
+        let age2=prompt("What is your age",18);
+        let welcome=(age<18)?
+          function(){alert("hello");}:
+          function(){alert("Greetings");}
+
+     </script>
+<body>
+</body>
+</html>

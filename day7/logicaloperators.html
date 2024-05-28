@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        alert(false || true);
+        alert(false||true);
+        alert(true||false);
+        alert(false||false);
+        if (1||0){
+            alert('truthy');
+        }
+        let hour =9;
+        if(hour<10 || hour>18)
+            {
+                alert('the office is closed');
+            }
+            let hour1=12;
+        let isWeekend=true;
+        if(hour<10 ||hour>18||isWeekend){
+            alert('the  office is closed');
+        }
+        let firstname="";
+        let lastname="";
+        let nickname="supercoder";
+        alert(firstname||lastname||nickname||"Anonymous");
+        let hour2=12;
+        let minutes=30;
+        if(hour ==12 && minutes ==30){
+            alert('the time is 12.30');
+        }
+        if(1 && 0){
+            alert("won't work because the result is falsy");
+        }
+        let x=1;
+        (x>0)&&alert('greater than zero');
+        let x1=1;
+        if(x>0) alert('Greater than zero');
+        if(-1 || 0)alert('first');
+        if(-1 && 0)alert('second');
+        if(null || -1 && 1)alert('third');
+    </script>
+<body>
+</body>
+</html>

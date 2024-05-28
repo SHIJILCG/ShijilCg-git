@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    let calculator = {
+      read() {
+        this.a = prompt("Enter first value");
+        this.b = prompt("Enter the second value");
+      },
+      add() {
+        alert(`${this.a}+${this.b}=${+this.a + +this.b}`);
+      },
+      sub(){
+        alert(`${this.a}-${this.b}=${this.a-this.b}`);
+      },
+      mul(){
+       alert(`${this.a}*${this.b}=${this.a*this.b}`);
+      },
+      div(){
+        alert(`${this.a}/${this.b}=${this.a/this.b}`);
+      }
+    };
+    calculator.read();
+    let c=prompt("Enter the symbol");
+    switch(c){
+        case'+':
+            calculator.add();
+            break;
+        case '-':
+            calculator.sub();
+            break;
+        case '*':
+            calculator.mul();
+            break;
+        case '/':
+            calculator.div();
+            break;
+        default:
+            alert("Enter the valid symbol");
+    }
+  </script>
+  <body></body>
+</html>

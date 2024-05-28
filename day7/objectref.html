@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let user={name:"john"};
+        let admin=user;
+        admin.name="pete";
+        alert(user.name);
+        let a={};
+        let b={};
+        alert(a==b);
+        aler(a==b);
+        alert(a==b);
+        const user1={
+           name:"john"
+        };
+        user.name="pete";
+        alert(user.name);
+         let users={
+            name:"john",
+            age:30
+         };
+         let clone={};
+         for(let key in users){
+            clone[key]=user[key];
+         }
+         clone.name="pete";
+         alert(user.name);
+         let users1={name:"john"};
+         let permission1={canView:true};
+         let permission2={canEdit:true};
+         Object.assign(user,permission1,permission2);
+         alert(user.name);
+         alert(user.canView);
+         alert(user.canEdit);
+         let user={
+            name:"john"
+         };
+         Object.assign(user,{name:"pete"});
+         alert(users.name);
+         let users11={
+            name:"john",
+            age:30
+         };
+         let clone =Object.assign({},user);
+         alert(clone.name);
+         alert(clone.age);
+         let user={  
+            name:"john",
+            sizes:{
+                height:182,
+                width:50
+            }
+         };
+         alert(user.sizes.height);
+         let user={
+            name:"john",
+            sizes:{
+                height:182,
+                width:50
+            }
+         };
+         let clone=Object.assign({},user);
+         alert(user.sizes===clone.sizes);
+         user.sizes.width=60;
+        alert(clone.sizes.width);
+        let user={
+            name:"john",
+            sizes:{
+                height:182,
+                width:50
+            }
+        };
+        let clone=structuredClone(user);
+        alert(user.sizes === clone.sizes);
+        user.sizes.width=60;
+        alert(clone.sizes.width);
+        let user={}
+        user.me=user;
+        let clone=structuredClone(user);
+        alert(clone === clone);
+        // structuredClone({
+        //     f:Function(){}
+        // });
+        function User(name){
+            this.name=name;
+            this.isAdmin=false;
+            alert(user.name);
+            alert(user.isAdmin);
+        }
+        function User(name){
+          this.name=name;
+          this.isAdmin=false;
+        }
+        let user={
+            name:"jack",
+            isAdmin:false
+        };
+        let user=new function(){
+            this.name="john";
+            this.isAdmin=false;
+        };
+        function User(){
+            alert(new.target);
+        }
+        User();
+        new User();
+        function User(name){
+            if(!new.target){
+                return new User(name);
+            }
+            this.name=name;
+        }
+        let john=User("john");
+        alert(john.name);
+        function BigUser(){
+            this.name="john";
+            return{name:"Godzilla"};
+        }
+        alert(new BigUser().name);
+        function Smalluser(){
+            this.name="john";
+            return;
+        }
+        alert(new Smalluser().name);
+        function User(name){
+            this.name=name;
+            this.sayhi=function(){
+                alert("my name is"+this.name);
+            };
+        }
+        let john1 =new User("john");
+        john.sayhi();
+         let user={
+            function sayhi(){
+                alert
+            }
+         }
+    </script>
+<body>
+</body>
+</html>
