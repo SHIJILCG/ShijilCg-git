@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+     <script>
+        let user={
+            firstname:"john",
+            sayHi(){
+                alert(`Hello,${this.firstname}!`);
+            }
+        };
+        setTimeout(user.sayHi,1000);
+        let user1={
+            firstname:"john",
+            sayHi(){
+                alert(`Hello,${this.firstname}`);
+            }
+        };
+        setTimeout(function(){
+            user.sayHi();
+        },1000);
+        let user11={
+         firstname:"john",
+         sayHi(){
+            alert(`Hello,${this.firstname}!`);
+         }
+        };
+        setTimeout(()=>user.sayHi(),1000);
+        user={
+            sayHi(){alert("Another user in setTimeout");}
+        };
+        let user3={
+         firstname:"john"
+        };
+        function func(){
+            alert(this.firstname);
+        }
+        let funcUser=func.bind(user);
+        funcUser();
+        let user4={
+            firstName:"john"
+        };
+        function func(phrase){
+            alert(phrase +','+this.firstName);
+        }
+        function partial(func,...argsBound){
+            return function(...args){
+                return func.call(this,...argsBound,...args);
+            }
+        }
+        let user5={
+            firstName:"john",
+            say(time,phrase){
+                alert(`[${time}]${this.firstName}:${phrase}!`);
+            }
+        };
+        user.sayNow=partial(user.say,new Date().getHours()+':'+new Date().getMinutes());
+        user.sayNow("Hello");
+        function f(){
+            alert(this);
+        }
+        let user={
+            g: f.bind(null)
+        };
+        user.g();
+        function f(){
+            alert(this.name);
+        }
+        f=f.bind({name:"john"}).bind({name:"pete"});
+        f();
+        function askPassword(ok,fail){
+            if(password == "rockstar")ok();
+            else fail();
+        }
+        let user={
+            name:'john',
+            loginok(){
+                alert(`${this.name} logged in`);
+            },
+            loginFail(){
+                alert(`${this.name} failed to log in`);
+
+            },
+        };
+        askPassword(user.loginOk,user.loginFail);
+     </script>
+<body>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <script>
+    function sum(a,b){
+        return a+b;
+    }
+    alert(`1 + 2 = ${sum(1,2)}.`);
+    let str1="hello\nworld";
+    let str2='hello world';
+    alert(str1 == str2);
+    let str ='hello';
+    alert(str[0]);
+    alert(str.at(0));
+    alert(str[str.length -1]);
+    alert(str.at(-1));
+    for (let char of "hello"){
+        alert(char);
+    }
+    let str11="hi";//error code 
+    str[0]='h';//error code
+    alert(str[0]);//error code
+    let str ='hi';
+    str='h' + str[1];
+    alert(str);
+    alert('interface'.toLocaleUpperCase());
+    alert('interface'[0].toLowerCase());
+     let str="As sly a fox .as strong as an ox";
+     let terget ='as';
+     let pos=0;
+     while(true){
+        let foundpos=str.indexOf(target,pos);
+        if(found==-1)break;
+        alert(`Found at ${foundpos}`);
+        pos=-foundpos+1;
+     }
+     let str="As sly as a fox ,as Strong as an ox ";
+     let target ="as";
+     let pos1=-1;
+     while((pos=str.indexOf(target,pos+1)) != -1){
+        alert(pos);
+     }
+     let str ="widget  with id";
+     if(str.indexOf("Widget")){
+        alert("We found it");
+     }
+     let str ="widget with id";
+     if(str.indexOf("widget")!= -1){
+        alert("we found it"); 
+     }
+     alert("Widget with id".includes("widget "));
+     alert("hello".include("bye"));
+     alert("Widget".includes("id"));
+     alert("widget".includes("id",3));
+     alert("Widget".startsWith("wid"));
+     alert("Widget".endsWith("get"));
+     let str="stringify";
+     alert(str.slice(0,5));
+     alert(str.slice(0,1));
+     let str="stringify";
+     alert(str.slice(-4,-1));
+     alert(str.substring(2,6));
+     alert(str.slice(6,2));
+     alert(str.slice(2,6));
+     alert(str.slice(6,2)); 
+    </script>
+<body>
+</body>
+</html>

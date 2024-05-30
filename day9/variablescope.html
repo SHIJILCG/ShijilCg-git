@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+     <script>
+        {
+            let message="hii";
+            alert(message);
+            {
+            let message="hello";
+            alert(message);
+        }
+        alert(message);
+    }
+    if(true){
+        let phrase="hello";
+        alert(phrase);
+    }
+    alert(phrase);
+     for(let i=0;i<3;i++){
+        alert(i);
+     }
+     alert(i);
+     alert(i);
+     function sayHi(firstNAme,lastNAme){
+         function getFullname(){
+            return firstNAme + "" +lastNAme;
+         }
+     }      
+     alert("hello," + getFullName());
+     alert("bye," + getFullName());
+     function makeCounter(){
+        let count=0;
+        return function(){
+            return count++;
+        };
+     }
+     let counter = makeCounter();
+     alert(counter());
+     alert(counter());
+     alert(counter());
+     function makeCounyer(){
+        let count=0;
+        return function(){
+            return count++;
+        };
+     }
+     let counter2=makeCounter();
+     function f(){
+        let value=123;
+        return function(){
+            alert(value);
+        }
+     }
+     let g=f();
+       function f(){
+        let value=math.random();
+        return function(){alert(value);};
+       }
+       let arr=[f(),f(),f()];
+       function f(){
+        let value=123;
+        return function(){
+            alert(value);
+        }
+       }
+       let g1=f();
+     g1=null;
+     function makeCounter(){
+        let count=0;
+        return function(){
+            return count++;
+        };
+     }
+     let counter1=makeCounter();
+     let counter3=makeCounter();
+     alert(counter1());
+     alert(counter());
+    let phrase="hello";
+    if(true){
+        let user="john";
+        function sayHi(){
+            alert(`${phrase},${user}`);
+        }
+    } 
+    sayHi();
+    function sum(q){
+        return function(w) {
+          return q+w;  
+        };
+    }
+    alert(sum(1)(2));
+    alert((5)(-1));
+    let x=1;
+    function fun(){
+        alert(x);
+        let x=2;
+    }
+    fun();
+    function func(){
+        alert(x);
+        let x=2;
+    }
+    function inArray(arr){
+        return function(x){
+            return arr.includes(x);
+        };
+    }
+    let arr2=[1,2,3,4,4,5,6,7];
+    alert(arr.filter(inArra([1,2,10])));
+    function byField(fieldName){
+        return (a,b)=>a[fieldName]>b[firstName]?1:-1;
+    }
+    function makeArmy(){
+        let shooter=[];
+        for(let i=0;i<10;i++){
+            let shooter=function(){
+                alert(i);
+            };
+            shooters.push(shooter);
+        }
+        return shooters;
+    }
+    let army=makeArmy();
+    army[0]();
+    army[5]();
+     </script>
+</head>
+<body>
+</body>
+</html>

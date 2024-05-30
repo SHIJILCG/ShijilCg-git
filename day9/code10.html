@@ -1,0 +1,41 @@
+<!-- <!DOCTYPE html>
+<html>
+  <script>
+    while (1) {
+        let value = Math.floor(Math.random() * 3);
+        value = Number(value);
+        let b=prompt("Enter the guessed number");
+        b=Number(b);
+        if(value == b){
+            alert("correct number");
+        }else{
+            alert(`wrong number,the correct number was ${value}`)
+        }
+    }
+  </script>
+  <body></body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guessing Game</title>
+</head>
+<body>
+  <script>
+    while (true) {
+        let value = Math.floor(Math.random() * 10);
+        let b = prompt("Enter the guessed number (between 0 and 2):");
+        b = Number(b);
+        if (value === b) {
+            alert("Correct number!");
+        } else {
+            alert(`Wrong number, the correct number was ${value}`);
+        }
+        // let continueGame = prompt("Do you want to play again? (yes/no):");
+        // if (continueGame.toLowerCase() !== "yes") {
+        //     break;
+        // }
+    }
+  </script>
+</body>
+</html>

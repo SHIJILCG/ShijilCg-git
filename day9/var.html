@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        if(true){
+            var test =true;
+        }
+        alert(test);
+        if(true){
+            let test =true;
+        }
+        alert(test);
+        for(var i=0;i<10;i++){
+            varone=1;
+        }
+        alert(i);
+        alert(one);
+        function sayHi(){
+            if(true){
+                var phrase="hello";
+            }
+            alert(phrase);
+        }
+        sayHi();
+        alert(phrase);
+        var user="pete";
+        var user="john";
+        alert(user);
+        function sayHi(){
+            phrase="hello";
+            alert(phrase);
+            var phrase;
+        }
+        sayHi();
+        function sayHi(){
+            var phrase;
+            phrase="hello";
+        }
+        sayhi();
+        (function(){
+            alert("parentheses around the function");
+        })();
+        (function(){
+            alert("parentheses around the whole thing");
+        })();
+        !function(){
+            alert("Bitwise NOT operator start the expression");
+        }();
+        +function(){
+            alert("Unary plus start the expression");
+        }();
+    </script>
+<body>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+     <script>
+        let count=0;
+        function maxnumber(...args){
+           let max1=Math.max(...args);
+           alert(max1);
+           for(let arg of args){
+              if(arg===max1){
+                  count+=1; 
+              }
+           }
+           alert(`the largest number ${max1} is repeated ${count} times`);
+        }
+ maxnumber(1,2,3,4,5,6,8,8,9,9);
+     </script>
+<body>
+</body>
+</html>

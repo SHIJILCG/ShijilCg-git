@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    let user = {
+      firstName: "john",
+      sayHi() {
+        alert(`Hello,${this.firstName}`);
+      },
+    };
+    setTimeout(user.sayHi, 1000);
+    let f = user.sayHi;
+    setTimeout(f, 1000);
+    let user1 = {
+      firstName: "john",
+      sayHi() {
+        alert(`Hello,${this.firstName}`);
+      },
+    };
+    setTimeout(function () {
+      user.sayHi();
+    }, 1000);
+    let user5 = {
+      firstName: "john",
+      sayHi() {
+        alert(`hello,${this.firstName}`);
+      }
+    };
+    setTimeout(()=>user.sayHi(),1000);
+    user={
+        sayHi(){alert("Another user in setTimeout");}
+    };
+    let user4={
+        firstName:"john"
+    };
+    function func(){
+        function func(){
+            alert(this.firstName);
+        }
+    }
+    let funcUser=func.bind(user);
+    funcUser();
+    let user44={
+      firstName:"john",
+      sayHi(){
+        alert(`Hello,${this.firstName}`);
+      }
+    };
+    let sayHi=user.sayHi.bind(user);
+    sayHi();
+    setTimeout(sayHi,1000);
+    user={
+        sayHi(){alert("Another user in setTimeout");}
+    };
+    let user6={
+        firstName:"john",
+        say(phrase){
+            alert(`${phrase},${this.firstName}`);
+        }
+    };
+    let say=user.say.bind()
+  </script>
+  <body></body>
+</html>

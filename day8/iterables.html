@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+     <script>
+        let range={
+            from:1,
+            to:5
+        };
+    // range.foreach(alert);
+    range[Symbol.iterator]=function(){
+        return{
+            cirrent:this.from,
+            last:this.to,
+            next(){
+                if(this.current<=this.last){
+                    return {
+                        done:false,value:this.current++};
+                    }else{
+                        return{done:true};
+                    }
+                    }
+                };
+            };
+            for(let num of range){
+
+                alert(num);
+            }
+        let range={
+            from:1,
+            to:5,
+                this.current=this.from;
+                return this;
+            },
+            next(){
+                if(this.current<=this.to){
+                    return{done:false,value:this.current++};
+
+                }else{
+                    return{done:true};
+                }
+            }
+        for(let num of range){
+            alert(num);;
+        }
+    for(let char of "test")
+    alert(char);
+let str='x';
+for(let char of str){
+    alert(char);
+}
+let str2 ="he"
+let 
+     </script>
+<body>
+</body>
+</html>

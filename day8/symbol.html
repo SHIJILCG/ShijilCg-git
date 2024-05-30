@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let id=Symbol("id");
+        alert(id.toString());
+        let user={
+            name:"john"
+        };
+        let id1 =symbol("id");
+        user[id]=1;
+        alert(user[id]);
+        let id2=symbol("id");
+        user[id]="their id value";
+        let user={name:"john"};
+        user.id="our id value";
+        user.id="therir id value";
+        let id4 =symbol("id");
+        let user={
+            name:"john",
+            [id]:123
+        };
+        let id5=symbol("id");
+        let user={
+            name:"john",
+            age:30,
+            [id]:123
+        };
+        for(let key in user) alert(key);
+        alert("Direct:"+ user[id]);
+        let id6=symbol("id");
+        let user={
+            [id]:123
+        };
+        let clone=Object.assign({},user);
+        alert(clone[id]);
+       let id7=symbol.for("id");
+       let idAgain=symbol.for("id");
+       alert(id === idAgain);
+       let sym=symbol.for("name");
+       let sym2=symbol.for("id");
+       alert(symbol.keyfor(sym));
+       alert(symbol.keyfor(syme));
+       let globalsymbol=symbol.for("name");
+       let localsymbol=symbol("name");
+       alert(symbol.keyfor(globelsymbol));
+       alert(symbol.keyfor(localsymbol));
+       alert(localsymbol.description);  
+       </script>
+<body>
+</body>
+</html>

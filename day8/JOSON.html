@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let user={
+            name:"john",
+            age:30,
+            toString(){
+                return`{name:"${this.name}",age:${this.sge}}`;
+            }
+        };
+        alert(user);
+        let student={
+            name:'john',
+            age:30,
+            isAdmin:false,
+            courses:['html','css','js'],
+            spouse:null
+        };
+        let json=JSON.stringify(student);
+        alert(typeof json);
+        alert(json);
+        alert(JSON.stringify(1))
+        alert(JSON.stringify('test'));
+        alert(JSON.stringify(true));
+        alert(JSON.stringify([1,2,3]));
+        let user1={
+              sayhi(){
+                alert("hello");
+              },
+              [Symbol("id")]:123,
+              something:undefined
+        };
+        alert(JSON,stringify(user));
+        let meetup={
+            title:"conference",
+            room:{
+                number:23,
+                participants:["john","ann"]
+            }
+        };
+        alert(JSON,stringify(meetup));
+        let room={
+            number:23
+        };
+        let meetup1={
+                title:"conference",
+                participants:["john","ann"]
+        };
+        meetup.place=room;
+        room.occuoiedBy=meetup;
+        JSON.stringify(meetup);
+        let room={
+            number:23
+        };
+        let meetup={
+            title:"conference",
+            participants:[{name:"john"},{name:"Alice"}],
+            place:room
+        };
+        room.occuoiedBy=meetup;
+        alert(JSON.stringify(meetup,['title','participants']));
+        let room={
+            number:23
+        };
+        let meetup={
+            title:"conference",
+            participants:[{name:"john"},{name:"Alice"}],
+            place:room
+        };
+        room.occuoiedBy=meetup;
+        alert(JSON.stringify(meerup,['title','participants','place','name']));
+        let room={
+            number:23
+        };
+        let meetup={
+             title:"conference",
+             participants:[{name:"john"},{name:"Alice"}],
+             place:room
+        };
+        room.occuoiedBy=meetup;
+        alert(JSON.stringify(meetup,function replace(key,value){
+            alert(`${key}:${value}`);
+            return (key=='occupied')? undefined:value;
+        }));
+        let user11={
+            name:"john",
+            age:25,
+            roles:{
+                isAdmin:false,
+                isEditor:true
+            }
+        };
+        alert(JSON.stringify(user,null,2));
+        let room={
+            number:23
+        };
+        let meetup={
+            title:"conference",
+            date:new Date(Date.UTC(2017,0,1)),
+            room
+        };
+        alert(JSON.stringify(meetup));
+        let room={
+            number:23,
+            toJSON(){
+                return this.number;
+            }
+        };
+        let meetup={
+            title:"Conference",
+            room
+        };
+        alert(JSON.stringify(room));
+        alert(JSON.stringify(meetup));
+        let value=JSON.parse(str[reviver]);
+        let number="[0,1,2,3]";
+        number=JSON.parse(number);
+        alert(number[1]);
+        let user2=`{"name":"john","age":35,"isAdmin":false,"friends":[0,1,2,3,4]}`;
+        alert(user);
+        let student1={
+            name:'john',
+            age:30,
+            isAdmin:false,
+            courses:['html','cs','jd'],
+            spouse:null
+        };
+        let json2=JSON.stringify(student);
+        alert(typeof json);
+        alert(json);
+        let user22={
+            sayhi(){
+                alert("hello");
+            },
+            [symbol("id")]:123,
+            something:undefined
+        };
+        alert(JSON.stringify(user));
+        let meetup={
+            title:"confenerence",
+            room:{
+                number:23,
+                participants:["john","ann"]
+            }
+        };
+        alert(JSON<stringify(meetup));
+        let room={
+            number:23
+        };
+        let meerup={
+            title:"conference",
+            participants:["john","ann"]
+
+        };
+        meetup.place=room;
+        room.occuoiedBy=meetup;
+        JSON>stringify(meetup);
+        let room={
+            number:23
+        };
+        let meetup={
+            title:"conference",
+            participants:[{name:"john"},{name:"Alice"}],
+        };
+        room.occuoiedBy=meetup;
+        alert(JSON.stringify(meetup,['tital','participants']));
+        let room={
+            number:23
+        };
+        let meerup1={
+             title:"conferennce",
+             participants:[{name:"john"},{name:"Alice"}],
+             place:room
+        };
+        room.occuoiedBy=meetup;
+        alert(JSON.stringify(meetup,function replace(key,value){
+           alert(`${key}:${value}`);
+           return(key =='occupiedBy')? undefined:value;
+        }));
+        let user33={
+           name:"john",
+           age:25,
+           roles:{
+            isAdmin:false,
+            isEditor:true
+           }
+        };
+        alert(JSON.stringify(user,null,2));
+        let room={
+            number:23
+        };
+        let meetup={
+        title:"conference",
+        date:new Date(Date.UTC(2017,0,1)),
+        room
+        };
+        alert(JSON.stringify(meetup));
+        let room={
+            number:23,
+            toJSON(){
+               return this.number;  
+            }
+        };
+        let meetup={
+            title:"conference",
+            room
+        };
+        alert(JSON.stringify(room));
+        alert(JSON.stringify(meetup));
+        let value1=JSON.parse(str[reviver]);
+         let =JSON.parse(number);
+         alert(number[1]);
+         let json1=`{
+           name:"john",
+           "surname":'smith',
+           'isAdmin':false
+             "birthday":new Date(200,2,3),
+             "friends":[0,1,2,3] 
+         }`;
+         let str=`{"title":"conference","date":"2017-11-30T12:00:00:000Z}`;
+         let meetup=JSON.parse(str);
+         alert(meerup.date.getDate());
+         let str3=`{"title":"conference","date":"2017-11-30T12:00:00:000Z"}`;
+         let meetup=JSON.parse(str,function(key,value){
+            if(key=='date') return new Date(value);
+            return value;
+         });
+         alert(meetup.date.getDate());
+         let user3={
+            name:"john smith",
+            age:35
+         };
+         let user222=JSON.parse(JSON.stringify(users));
+         let room={
+            number:23
+         };
+         let meetup={
+            title:"conference",
+            occuoiedBy:[{name:"john"},{name:"Alice"}],
+            place:room
+         };
+         room.occuoiedBy=meetup;
+         meeetup.self=meetup;
+         alert(JSON.stringify(meetup,function replace(key,value){
+            return(key!="" && value== meetup)?undefined:value;
+         })); 
+            </script>
+<body>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function pow(x,n){
+            let result=1;
+            for(let i=0;i<n;i++){
+                result*=x;
+            }
+            return result;
+        }
+        alert(pow(2,3));
+        function pow(x,n){
+            if(n==1){
+                return x;
+            }else{
+                return x * pow(x,n-1);
+            }
+        }
+        alert(pow(2,3));
+        function pow(x,n){
+            return(n==1)?x:(x* pow(x,n-1));
+        }
+        function pow(x,n){
+            if(n==1){
+                return x;
+            }else{
+                return x*pow(x,n-1);
+            }
+        }
+        alert(pow(2,3));
+        function pow(x,n){
+            if(n==1){
+                return x;
+            }else{
+                return X*poe(x,n-1);
+            }
+        }
+        function pow(x,n){
+            let result=1;
+            for(let i=0;i<n;i++){
+                result *=x;
+            }
+            return result;
+        }
+        let company={
+            sales:[{
+                name:'john',
+                salary:1000
+            },{name:'Alice',
+                salary:1600
+            }
+        ],
+        development:{
+            sates:[{
+                name:'peter',
+                salary:2000
+            },{
+                name:'pete',
+                salary:2000
+            },{
+                name:'Alex',
+                salary:1800
+            }
+        ],
+        internals:[{
+            name:'jack',
+            salary:1300
+        }]
+        }
+        };
+     function sumTo(n){
+        let sum=0;
+        for(let i=1;i<n;i++){
+            sum +=i;
+
+        }
+        return sum;
+     }
+     alert(sumTO(100));
+     function sumTO(n){
+        if(n==1)return1;
+        return n + sumTo(n-1);
+     }
+     alert(sumTo(100));
+     function sumTon(n){
+        return n* (n+1)/2;
+     }
+     alert(sumTO(100));
+     function fctorial(n){
+        return (n!=1)?n*factorial(n-1):1;
+        alert(factorial(5));
+     }
+     function factorial(n){
+        return n?n *factorial(n-1):1;
+     }
+     alert(factorial(5));
+    </script>
+<body>
+</body>
+</html>

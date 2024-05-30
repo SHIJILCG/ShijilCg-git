@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function getMaxsubsum(arr){
+            let maxsum=-infinity;
+            let currentsum=0;
+        for(let  num of arr){
+            currentsum +=num;
+            if(currentsum>maxsum){
+                maxsum=currentsum;
+            }
+            if(currentsum<0){
+                currentsum=0;
+            }
+        }
+        return maxsum;
+        }
+        let arr=[1,-2,3,4,-9,6];
+         alert( getMaxsubsum(arr));
+    </script>
+<body>
+</body>
+</html>

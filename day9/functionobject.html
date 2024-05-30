@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+     <script>
+       function satHi(){
+          alert("Hi");
+       } 
+       alert(sayHi.name);
+       let sayHi=function(){
+          alert("hi");
+       };
+       alert(sayHi.name);
+       function f(sayHi=function(){}){
+          alert(sayHi.name);
+       }
+       f();
+       let user={
+          sayHi(){
+
+          },
+          sayBye:function(){
+               
+          }
+       }
+       alert(user.sayHI.name);
+       alert(user.sayBye.name);
+       let arr=[function(){}];
+       alert(arr[0].name);
+       function f1(a){}
+       function f2(a,b){}
+       function many(a,b,...more){}
+       alert(f1.length);
+       alert(f2.length);
+       alert(many.length);
+       function ask(Question,...handlers){
+          let isYes=confirm(Question);
+          for( let handler of handlers){
+             if(handler.length==0){
+               if(isYes)handler();
+             }else{
+               handler(isYes);
+             }
+          }
+       }
+         function sayHi(){
+          alert("Hi");
+          sayHi.counter++;
+         }
+         alert(sayHi.name);
+        function f(sayHi=function(){}){
+          alert(sayHi.name);
+        } 
+        f();
+        let user1={
+          sayHi(){
+
+          },
+          sayBye:function(){}
+        }
+     alert(user.sayHi.name);
+     alert(user.sayBye.name);
+     let arr2=[function(){}];
+     alert(arr[0].name);
+     function sayHi(){
+          alert("Hi");
+          sayHi.counter=0;
+          sayHi();
+          sayHi();
+          alert(`called ${sayHi.counter}times`);
+        }  
+          function makeCounter(){
+             function counter(){
+               return counter.count++;
+             };
+             counter.count=0;
+             return counter;
+          }
+       let counter=makeCounter();
+       alert(counter());
+       alert(counter());
+     function makeCounter(){
+          function counter(){
+               return counter.count++;
+          };
+          counter.count=0;
+          return counter;
+     }
+     let counter1=makeCounter();
+     count.count=10;
+     alert(count());
+     let sayHi=function(who){
+          alert(`Hello,${who}`);
+     };
+     let sayHi=function func(who){
+      alert(`Hello,${who}`);
+     };
+     let sayHi=function func(who){
+      alert(`Hello,${who}`);
+     };
+     sayHi("john");
+     let sayHi=function func(who){
+      if(who){
+         alert(`Hello,${who}`);
+      }else{
+         func("Guest");
+      }
+     };
+     sayHi();
+     func();
+     let sayHi=function(who){
+      if(who){
+         alert(`Hello,${who}`);
+      }else{
+         sayHi("Guest");
+      }
+     };
+     let sayHi=function(who){
+      if(who){
+         alert(`Hello,${who}`);
+      }else{
+         sayHi("Guest");
+      }
+     };
+     let welcome=sayHi;
+     sayHi=null;
+     welcome();
+     let sayHi=function func(who){
+      if(who){
+         alert(`Hello,${who}`);
+      }else{
+         func("Guest");
+      }
+     };
+     let welcome1=sayHi;
+     sayHi=null;
+     welcome();
+     </script>
+<body>
+</body>
+</html>

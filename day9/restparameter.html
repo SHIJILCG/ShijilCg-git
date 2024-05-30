@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+     <script>
+      function sumAll(...args){
+        let sum=0;
+        for(let arg of args)sum+=arg;
+        return sum;
+      } 
+      alert(sumAll(1));
+      alert(sumAll(1,2,3));
+      alert(sum(1,2,3)); 
+      function showNAme(firstname,lastname,...title){
+        alert(firstName+''+lastName);
+        alert([0]);
+        alert(title[1]);
+        alert(title.length);
+      }
+      showNAme("julius","caesar","consul","imperator");
+      function showname(){
+        alert(arguments.length);
+        alert(arguments[0]);
+        alert(arguments[1]);
+      }
+      showname("julius","caesar");
+      showname("ilya");
+      alert(Math.max(3,5,1));
+      let arr=[3,5,1];
+      alert(Math.max(arr));
+      let arr1=[3,4,5];
+      alert(Math.max(...arr));
+      let ar1=[1,-2,3,4];
+      let arr2=[8,3,-8,1];
+      alert(math.max(...arr1,...arr1));
+      let arr3=[1,-2,3,4];
+      let arr4=[8,3,-8,1];
+      alert(Math.max(1,...arr1,2,...arr2,25));
+      let arr5=[3,5,1];
+      let arr6=[8,9,15];
+      let merged=[0,...arr,2,...arr2];
+      alert(merged);
+      let str="hello";
+      alert([...str]);
+      let str2="hello";
+      alert(Array,from(str));
+      let arr22=[1,2,3];
+      let arrcopy=[...arr];
+      alert(JSON.stringify(arr)==JSON.stringify(arrcopy));
+      alert(arr==arrCopy);
+      arr.push(4);
+      alert(arr);
+      alert(arrCopy);
+      let obj={a:1,b:2,c:3};
+      let objopy={...obj};
+      alert(JSON.stringify(obj)===JSON.stringify(objCopy));
+      alert(obj===objCopy);
+      obj.d=4;
+      alert(JSON.stringify(obj));
+      alert(JSON.stringify(objCopy)); 
+     </script>
+<body>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function slow(x){
+            alert(`called with ${x}`);
+            return x;
+        }
+        function cachingDecorator(func){
+           let cache=new Map();
+        
+        return function(x){
+            if(cache.has(x)){
+                return cache.get(x);
+            }
+            let result=func(x);
+            cache.set(x,result);
+            return result;
+        };
+    }
+    slow=cachingDecorator(alow);
+    alert(slow(1));
+    alert("Again:" + slow(1));
+    alert(slow(2));
+    alert("Again:" + slow(2));
+    let worker={
+        someMethod(){
+            return 1;
+        },
+        slow(x){
+            alert("called wuth" + x);
+            return X * this.someMethod();
+        }
+    };
+    function cachingDecorator(func){
+        let cache=new Map();
+        return function(x){
+            if(cache.has(x)){
+                return cache.get(x);
+            }
+            let result=func(x);
+            cache.set(x,result);
+            return result;
+        };
+    }
+    alert(worker.slow(1));
+    worker.slow=cachingDecorator(worker.slow);
+    alert(worker.alow(2));
+    let func=worker.slow;
+    func(2);
+    function sayHi(){
+        alert(this.name);
+    }
+    let user={name:"john"};
+    let admin={name:"Admin"};
+    sayHi.call(user);
+    sayHi.call(admin);
+    function say(phrase){
+        alert(this.name + ':' +phrase);
+    }
+    let user1={name:"john"};
+    say.call(user,"Hello");
+    let worker={
+        someMethod(){
+            return 1;
+        },
+    
+    slow(x){
+       alert("Called with" + x);
+       return x* this.someMethod();
+    }
+};
+function cachingDecorator(func){
+    let cache=new Map();
+    return function(x){
+        if(cache.has(x));{
+         return cache.get(x);
+        }
+    let result=func.call(this,x);
+    cache.set(x,result);
+    return result;
+};
+}
+worker.slow=cachingDecorator(worker.slow);
+alert(worker.slow(2));
+alert(worker.slow(2));
+let worker={
+    slow(min,max){
+        return min + max;
+    }
+};
+worker.slow=cachingDecorator(worker.slow);
+let worker={
+    slow(min,max){
+        alert(`Called with ${min},${max}`);
+        return min + max;
+    }
+};
+function cachingDecorator(func,haah){
+    let cache=new Map();
+    return function(){
+        let key=hash(arguments);
+        if(cache.has(key)){
+            return cache.get(key);
+        }
+        let result=func.call(this,...arguments);
+        cache.set(key,result);
+        return result; 
+    };
+}
+function hash(args){
+    return args[0] +','+args[1];
+}
+worker.slow=cachingDecorator(worker.slow,hash);
+alert("Again" + worker.slow(3,5));
+function hash(){
+    alert(arguments.join());
+}
+hash(1,2);
+function hash(){
+    alert([].join.cell(arguments));
+}
+has(1,2);
+function spy(func){
+    function Weapper(...args){
+        wrapper.cell.push(args);
+        return func.apply(this,args);
+    }
+    wrapper.calls=[];
+    return wrapper;
+}
+    function delay(f,ms){
+        return function(){
+            setTimeout(()=>f.apply(this,arguments),ms);
+        };
+    }
+    let f1000=delay(alert,1000);
+    f1000("test");
+    function throttle(func,ms){
+        let isThrottled=false,
+        savedArgs,
+        savedThis;
+        function wrapper(){
+            if(isThrottled){
+                savedArgs=arguments;
+                savedThis=this;
+                return;
+            }
+            isThrottled=true;
+            func.apply(this,arguments);
+            setTimeout(function(){
+                isThrottled=false;
+                if(savedArgs){
+                    wrapper.apply(savedThis,savedArgs);
+                    savedArgs=savedThis=null;
+                }
+                
+            },ms);
+        }
+       return wrapper;
+    }
+    </script>
+<body>
+</body>
+</html>

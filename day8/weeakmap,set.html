@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let john={name:"john"};
+        let map= new Map();
+        map.set(john,"...");
+        let array=[john];
+        john=null;
+        let weakMap= new WeakMap();
+        let obj={};
+        weakMap.set(obj,"ok");
+        weakMap.set("test","Whoops");
+        let join={name:"john"};
+        let weakMap1=new WeakMap();
+        weakMap.set(join,"...");
+        john=null;
+        let visitsCountMap=new Map();
+        function countMap(useres){
+            let count =visitsCountMap.get(user)||0;
+            visitsCountMap.set(user,count+1);
+        }
+        let john1={name:"john"};
+        countUser(john);
+        john=null;
+        let visitsCountMap1=new WeakMap();
+        function countUser(user){
+            let count=visitsCountMap.get (user)||0;
+            visitsCountMap.set(user,count+1);
+        }
+        let cache =new Map();
+        function process(onj){
+            if(!cach.has(obj)){
+                let result =obj;
+                cache.set(obj,result);
+                return result;
+            }
+            return cache.get (obj);
+        }
+        let obj1={
+         
+        };
+        let result=process(obj1);
+        let recipeMap2=process(obj);
+        obj=null;
+        alert(cache.size);
+        let cache2=new weakMap();
+        function process(obj){
+            if(!cache.has(obj)){
+                let result=obj;
+                cache.set(obj,result);
+                return result;
+            }
+            return cache.get(obj);
+        }
+        let obj11={     
+        }
+        let result1=process(obj);
+        let result2=process(obj);
+        obj=null;
+        let visitedset= new WeakSet();
+        let john11={name:"john"};
+        let pete={name:"pete"};
+        let mary={name:"mary"};
+        visitedset.add(john);
+        visitedset.add(pete);
+        visitedset.add(john);
+        alert(visitedset.has(john));
+        alert(visitedset.has(mary));
+        john=null;
+        let message=[
+            {text:"hello",from:"john"},
+            {text:"How goes",from:"john"},
+            {text:"see you soon",from:"Alice"}
+        ];
+        let readap = new WeakMap();
+        readMap.set(messages[0],new Date(2017,1,1));
+    </script>
+<body>
+</body>
+</html>

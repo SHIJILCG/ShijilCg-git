@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+     <script>
+        let b=[1,23456,,6,5,43,,45,43,];
+        b.forEach(alert);
+        ["bilbo","Gandalf","Nazgul"].forEach(alert);
+        ["bilbo","Gandalf","Nazgul"].forEach((item,index,Array)=>{
+            alert(`${item} is at index ${index}in ${array}`);
+        });
+        let arr=[1,0,false];
+        alert(arr.indexof(0));
+        alert(arr.indexOf(false));
+        alert(arr.indexof(null));
+        alert(arr.indexOf(1));
+        let fruits=["Apple","Orange","Apple"];
+        alert(fruits.imdexof("Apple"));
+        alert(fruits.lastIndexOf("Apple"));
+        const aee=[NaN];
+        alert(arr.indexOf(NaN));
+        alert(arr.indexOf(NaN));
+        let result=arr.find(function(item,index,array){
+        });
+        let users=[
+            {id:1,name:"john"},
+            {id:2,name:"pete"},
+            {id:3,name:"mary"}
+        ];
+        let user=users.find(item=>item.id==1);
+        alert(user.name);
+        let users1=[
+            {id:1,name:"john"},
+            {id:2,name:"pete"},
+            {id:2,name:"mary"},
+            {id:4,name:"john"}
+        ];
+        alert(users.findeIndex(user=>use.name =='john'));
+        alert(users.findLastIndex(user=>user.name =='john')) 
+     </script>
+<body>
+</body>
+</html>
