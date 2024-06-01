@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        class  User{
+            static staticMethod(){
+                alert(this==User);
+            }
+        }
+        User.staticMethod();
+        //
+        class User{}
+        User.staticMethod=function(){
+            alert(this===User);
+        };
+        User.staticMethod();
+        //
+        class Article{
+            constructor(title,date){
+                this.title=title;
+                this.date=date;
+            }
+            static compare(articleA,articleB){
+                return articleA.date-articleB,date;
+            }
+        }
+        let articles=[
+            new Article("HTML",new Date(2019,1,1)),
+            new Article("CSS",new Date(2019,0,1)),
+            new Article("JAVASCRIPT",new Date(2019,11,1))
+        ];
+        articles.sort(Article.compare);
+        alert( articles[0].title );
+        //
+         class Article{
+            constructor(title,date){
+               this.title=title;
+               this.date=date; 
+            }
+            static  createTodays(){
+                return new this ("todays digest",new Date());
+            }
+         }
+         let article=Article.createTodays();
+         alert(article.title);
+         //
+         class Article{
+            static publisher="Ilya kantor";
+         }
+         class Animal{
+            static planet="Earth";
+            constructor (name,speed){
+                this.name=speed;
+                this.name=name;
+            }
+            run(speed=0){
+                this.speed +=speed;
+                alert(`${this.name} runs with speed ${this.speed}`);
+            }
+            static compare(animalA,animalB){
+                return animalA.speed-animalB.speed;
+            }
+         }
+         class Rabbit extends Animal{
+            hide(){
+                alert(`${this.name} hides`);
+            }
+         }
+         let rabbits=[
+            new Rabbit("White Rabbit",10),
+            new Rabbit("Black Rabbit",5)
+         ];
+         rabbits.sort(Rabbit.compare);
+         alert(Rabbit.planet);
+         //
+         class Animal{}
+         class Rabbit extends Animal{}
+         alert(Rabbit.__proto__===Animal);
+         alert(Rabbit.prototype.__proto__===Animal.prototype);
+         //
+         class Rabbit extends Object{
+            constructor(name){
+                super();
+                this.name=name;
+            }
+         }
+         let rabbit=new Rabbit("Rab");
+         alert(rabbit.hasOwnproperty('name'));
+         //
+         class Rabbit{
+            constructor(name){
+                this.name=name;
+            }
+         }
+         let rabbit3=new Rabbit("Rab");
+         alert(rabbit.hasOwnproperty('name'));
+    </script>
+<body>
+</body>
+</html>

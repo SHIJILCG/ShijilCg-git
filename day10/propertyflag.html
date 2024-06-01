@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let user={};
+        Object.defineProperty(user,"name",{
+            value:"john"
+        });
+        let decriptor=Object.getOwnPropertyDescriptor(user,'name');
+        alert(JSON.stringify(descriptor,null,2));
+        //
+        let user={
+            name:"john"
+        };
+        Object.defineProperty(user,"name",{
+            writable:false
+        });
+        user.name="pete";
+        //
+        let user={};
+        Object.defineProperty(user,"name",{
+             value:"john",
+             enumerable:true,
+             configurable:true
+        });
+        alert(user.name);
+        user.name="pete";
+        //
+        let user={
+            name:"john",
+            toString(){
+                return this.name;
+            }
+        };
+        for(let key in user) alert(key);
+        //
+        let user={
+            name:"john",
+            toString(){
+                return this.name;
+            }
+        };
+        Object.defineProperty(user,"toString",{
+            enumerable:false
+        });
+        for(let key in user ) alert(key);
+        //
+        let decriptor1=Object.getOwnPropertyDescriptor(Math,'PI');
+        alert(JSON.stringify(decriptor,null,2));
+        //
+        let user={
+            name:"john"
+        };
+        Object.defineProperties(user,"name",{
+            configurable:false
+        });
+        user.name="pete";
+        delete user.name;
+        //
+        let user={
+            name:"john"
+        };
+        Object.defineProperty(user,"name",{
+            writable:false,
+            configurable:false
+        });
+        user.name="pete";
+        delete user.name;
+        Object.defineProperty(user,"name",{
+            value:"pete"
+        });
+        Object.defineProperties(obj,{prop1:descriptor1,
+            prop2:descriptor2
+        });
+        Object.defineProperties(user,{name:{
+            value:"john",writable:false
+        },surname:{value:"smith",writable:false},});
+    </script>
+<body>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+     <script>
+        let animal={
+            eats:true
+        };
+        let rabbit={
+            jumps:true
+        };
+        rabbit.__proto__=animal;
+        let animal1={
+            eats:true
+        };
+        let rabbit={
+            jumps:true
+        };
+        rebbit.__proto__=animal;
+        alert(rabbit.eat);
+        alert(rabbit.jumps);
+     </script>
+<body>
+</body>
+</html>

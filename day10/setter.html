@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let obj={
+            get propName(){
+
+            },
+            set propName(value){
+
+            }
+        };
+        let user={
+            name:"john",
+            surname:"smith"
+        };
+        let user1={
+            name:"john",
+            surname:"smith",
+        
+        get fullName(){
+        return `${this.name} ${this.surname}`;
+        }
+    };
+    alert(user.fullName);
+let user12={
+    get fullName(){
+        return`...`;
+    }
+};
+user.fullName="test";
+let user={
+    name:"john",
+    surname:"smith",
+    get fullName(){
+        return `${this.name} ${this.surname}`;
+    },
+    set  fullNAme(value){
+        [this.name,this,surname]=value.split(" ");
+    }
+};
+user.fullNAme="Alice Cooper";
+alert(user.name);
+alert(user.surname);
+//
+let user={
+    name:"john",
+    surname:"smith"
+};
+Object.defineProperty(user,'FullName',{
+    get(){
+        return`${this.name} ${this.surname}`;
+    },
+
+set(value){
+    [this.name,this.surname]=value.split("");
+}
+});
+alert(user.fullName);
+for(let key in user) alert(key);
+Object.defineProperty({},'prop',{
+    get()
+{
+    return1
+},
+  value:2
+});
+let user={
+    get name(){
+        return this._name;
+    },
+    set name(value){
+        if(value.length<4){
+            alert("Name is too short,need at least 4 characters");
+            return;
+        }
+        this._name=value;
+    }
+};
+user.name="pete";
+alert(user.name);
+user.name="";
+let john=new User("john",25);
+alert(john.age);
+//
+function user2(name,birthday){
+    this.name=name;
+    this.birthday=birthday;
+    Object.defineProperty(this,"age",{
+        get(){
+            let todayYear=new Date().getFullYear();
+            return todayYear-this.birthday.getFullYear();
+        }
+    });
+}
+let john1= new User("john",new Date(1992,6,1));
+alert(john.birthday);
+alert(john.age);
+//
+function  USer(name,birthday){
+    this.name=name;
+    this,birthday=birthday;
+    Object.defineProperty(this,"age",{
+        get(){
+            let todayYear=new Date().getFullYear();
+            return todayYear-this.birthday.getFullYear();
+        }
+    });
+}
+let john11= new User("john",new Date(1992,6,1));
+alert(john.birthday);
+alert(john.age);
+
+    </script>
+<body>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let animal={
+            eats:true
+        };
+        function rabbit(name){
+            this.name=name;
+        }
+        Rabbit.prototype=animal;
+        let rabbit=new Rabbit("White Rabbit");
+        alert(rabbit.eats);
+        function Rabbit(name){
+            this.name=name;
+            alert(name);
+        }
+        let rabbit=new Rabbit("White Rabbit");
+        let rabbit2=new rabbit.constructor("Black Rabbit");
+        function Rabbit(){
+            Rabbit.prototype={
+                jumps:true
+            };
+            let rabbit=new Rabbit();
+            alert(rabbit.constructor===Rabbit);
+        }
+        //
+        function Rabbit(){}
+            Rabbit.prototype={
+                jump:true
+            };
+        let rabbit=new Rabbit();
+        alert(rabbit.constructor===Rabbit);
+        //
+        function User(name){
+            this.name=name;
+        }
+        let user =new User('john');
+        let user2 =new user.constructor('pete');
+        alert(user2.name);
+        //
+        function Rabbit(){}
+        Rabbit.prototype={
+            eats:true
+        };
+        let rabbit=new Rabbit();
+        Rabbit.prototype.eats=false;
+        alert(rabbit.eats);
+        //
+        function Rabbit(){}
+        Rabbit.prototype={
+            eats:true
+        };
+        let rabbit=new Rabbit();
+        delete rabbit.eats;
+        alert(rabbit.eats);
+        //
+        function Rabbit(){}
+        Rabbit.prototype={
+            eats:true
+        };
+        let rabbit= new Rabbit.eats;
+        alert(rabbit.eats);
+    </script>
+<body>
+</body>
+</html>

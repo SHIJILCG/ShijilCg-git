@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        new Promise(function(resolve,reject){
+            setTimeout(()=>resolve(1),1000);
+        }).then(function(result){
+            alert(result);
+            return result*2;
+        }).then(function(result){
+            alert(result);
+            return result*2;
+        }.then(function(result){
+            alert(result);
+            return result*2;
+        }))
+        //////
+        new Promise(function(resolve,reject){
+            setTimeout(()=>resolve(1),1000);
+        }).then(function(result){
+            alert(result);
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>resolved(result*2),1000);
+            });
+        }).then(function(result){
+            alert(result);
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>resolve(result*2),1000);
+            });
+        }).then(function(result){
+            alert(result);
+        });
+        //////////
+        loadScript("/article/promise-changining/one.js")
+        .then(function(script){
+            return loadScript("/article/promise-chaning/two.js");
+        }).then(function(script){
+            one();
+            two();
+            three();
+        });
+        ////////
+        class Thenable{
+            constructor(num){
+                this.num=num;
+            }
+            then(resolve,reject){
+                    alert(resolve);
+                    setTimeout(()=>resolve(this.num*2),1000);
+            }
+        }
+        new Promise(resolve=>resolve(1))
+        .then(result=>{
+            return new thenable(result);
+        })
+        .then(alert);
+        ////////
+        function loadJson(url){
+            return fetch(url)
+            .then(Response=>Response.json());
+        }
+        function loadedGithubUser(name){
+            return loadJson()
+        }
+        function showAvathar(githubUser){
+            return new Promise(function(resolve,reject){
+                let img=document.createateElement('img');
+                img.src=githubUser.avathar_url;
+                img.className="promise-avathar-example";
+                document.body.append(img);
+                setTimeout(()=>{
+                    img.remove();
+                    resolve(githubUser);
+                },3000);
+            });
+        }
+        loadJson('/article/promise-chan=ining/user.json')
+        .then(user=>loadedGithubUser(user.name))
+        .then(showAvathar)
+        .then(githubUser=>alert(`Finished showing ${githubUser.name}`));
+    </script>
+<body>
+</body>
+</html>

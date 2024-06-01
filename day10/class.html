@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+     <script>
+       class User{
+        constructor(name){
+            this.name=name;
+        }
+        sayHi(){
+            alert(this.name);
+        }
+       } 
+       let user=new USer("john");
+       user.sayHi();
+       //
+       class USer{
+        constructor(name){
+            this.name=name;
+        }
+        sayHi(){
+            alert(this.name);
+        }
+       }
+       alert(typeof User);
+       class User{
+        constructor(name){
+            this.name=name;
+        }
+        sayHi(){
+            alert(this.name);
+        }
+       }
+       alert(typeof User);
+       alert(User===User.prototype.constructor);
+       alert(User.prototype.sayHi);
+       alert(Object.getOwnPropertyNames(User.prototype));
+       //
+       function User(name){
+        this.name=name;
+       }
+       USer.prototype.sayHi=function(){
+        alert(this.name);
+       };
+       let user1=new User("john");
+       user.sayHi();
+       //
+       class User{
+        constructor(){
+        }
+       }
+       alert(typeof User);
+       User();
+       //
+       class User{
+        constructor(){}
+       }
+       alert(User);
+       //
+       let User=class{
+        sayHi(){
+            alert("Hello");
+        }
+       };
+       //
+       let User=class MyClass{
+        sayHi(){
+            alert(MyClass);
+        }
+       };
+       new User().sayHi();
+       alert(MyClass);
+       //
+       function makeClass(phrase){
+        return class{
+            sayHi(){
+                alert(phrase);
+            }
+        };
+       }
+       let User=makeClass("Hello");
+       new User().sayHi();
+       //
+       class User{
+        constructor(name){
+            this.name=name;
+        }
+        get name(){
+            return this._name;
+        }
+        set name(value){
+            if(value.length<4){
+                alert("Name is too short");
+                return;
+            }
+            this._name=value;
+        }
+       }
+       let user2=new User("john");
+      alert(user.name);
+      user=new User("");
+      //
+      class User{
+        ['say' + 'Hi'](){
+            alert("Hello");
+        }
+      }
+      new User().sayHi();
+      //
+      class User{
+        name="john";
+      }
+      let user4=new User();
+      alert(user.name);
+      alert(User.prototype.name);
+      //
+      class User{
+        name=prompt("Name","please","john");
+      }
+      let user3=new USer();
+      let user44=new User();
+      alert(user.name);
+      //
+      class Button{
+        constructor(value){
+            this.value=value;
+        }
+        click(){
+            alert(this.value);
+        }
+      }
+      let Button=new Button("hello");
+      setTimeout(Button.click,1000);
+      //
+      class Button{
+        constructor(value){
+            this.value=value;
+        }
+        click=()=>{
+            alert(this.value);
+        }
+      }
+      let Button=new Button("hello");
+      setTimeout(Button.click,1000);
+      //
+      class Clock{
+        constructor({template}){
+            this.template=template;
+        }
+        render(){
+            let date=new Date();
+            let hours=date.getHours();
+            if(hours<10) hours='0' + hours;
+            let mins= date.getMinutes();
+            if(mins<10) mins='0' +mins;
+            let secs=date.getSeconds();
+            if(secs<10) secs='0'+ secs;
+            let output=this.template
+            .replace('h',hours)
+            .replace('m',mins)
+            .replace('s',secs);
+            console.log(output);
+        }
+        stop(){
+            clearInterval(this.timer);
+        }
+        start(){
+            this.render();
+            this.timer=setInterval(()=>this.render(),1000);
+        }
+      }
+     let clok= new Clock({template:'h:m:s'});
+     clock.start();
+     //
+     </script>
+<body>
+</body>
+</html>

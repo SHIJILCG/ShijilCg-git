@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    class User {
+      constructor(name) {
+        this.name = name;
+      }
+      sayHi() {
+        alert(this.name);
+      }
+      sayhh() {
+        alert(`${this.name} please`);
+      }
+    }
+    let a = new User("name");
+    a.sayHi();
+    a.sayhh();
+    //
+    class User{
+      constructor(name){
+        this.name=name;
+      }
+      sayHi(){
+        alert(this.name);
+      }
+      // alert(typeOf User)
+    }
+    //
+    class User{
+        constructor(name){this.name=name;}
+        sayHi(){
+            alert(this.name);
+        }
+    }
+    alert(typeof User);
+    alert(User)
+    class User {
+  constructor(name) { this.name = name; }
+  sayHi() { alert(this.name); }
+}
+//
+function User(name){
+  this.name=name;
+}
+User.prototype.sayHi=function(){
+  alert(this.name);
+};
+let user= new User("john");
+user.sayHi();
+//
+class User{
+  constructor(){
+  }
+}
+alert(typeof  User);
+//
+class User{
+  constructor(){
+
+  }
+}
+alert(User);
+//
+let User=class{
+  sayHi(){
+    alert("Hello");
+  }
+};
+//
+let User=class MyClass{
+  sayHi(){
+    alert(MyClass);
+  }
+};
+new User().sayHi();
+alert(MyClass);
+//
+function makeClass(phrase){
+  return class{
+    sayHi(){
+      alert(phrase);
+    }
+  };
+}
+let User=makeClass("Hello");
+new User().sayHi();
+//
+class User{
+  constructor(name){
+    this.name=name;
+  }
+  get name(){
+    return this._name;
+  }
+  set name(value){
+    if(value.length<4){
+      alert("Name is too short");
+      return;
+    }
+    this._name=value;
+  }
+}
+let user2=new User("john");
+alert(user.name);
+//
+class User{
+  name="john";
+  sayHi(){
+    alert(`Hello,${this.name}`);
+  }
+}
+new User().satHi();
+//
+class User{
+  name="john";
+}
+let user4= new User();
+alert(user.name);
+alert(User.prototype.name);
+//
+class User{
+  name=prompt("Name,please?","john");
+}
+let user5=new User();
+alert(user.name);
+//
+class button{
+  constructor(value){
+    this.value=value;
+  }
+  click(){
+    alert(this.value);
+  }
+}
+let button =new Button ("hello");
+setTimeout(button.click,1000);
+//
+class Button{
+  constructor(value){
+    this.value=value;
+  }
+  click=()=>{
+    alert(this.value);
+  }
+}
+let button=new Button("hello");
+setTimeout(button.click,1000);
+//
+// class MyClass{
+//   prop=value;
+//   constructor(...){
+
+//   }
+// }
+// merthod(...){}
+class Clock{
+  constructor({template}){
+    this.template=template;
+  }
+  render(){
+    let date= new Date();
+    let hours=date.getHours();
+    if(hours<10)hours='0'+hours;
+    let mins=date.getMinutes();
+    if(min<10)min='0'+ mins;
+    let secs=date.getSeconds();
+    if(secs<10)secs='0'+secs;
+    let output=this.template
+      .replace('h',hours)
+      .replace('m',mins)
+      .replace('s',secs);
+      console.log(output);  }
+      stop(){
+        clearInterval(this.timer);
+      }
+      start(){
+        this.render();
+        this.timer=setInterval(()=>this.render(),1000);
+      }
+}
+let clock= new Clock({template:'h:m:s'});
+clock.start();
+//
+class Animal{
+  constructor(name){
+    this.speed=0;
+    this.name=name;
+  }
+  run(speed){
+    this.speed=speed;
+    alert(`${this.name} runs with speed ${this.speed}`);
+  }
+  stop(){
+    this.speed=0;
+    alert(`${this.name} stands still`);
+  }
+}
+let Animal =new Animal("My animal");
+//
+class Rabbit extends Animal{
+  hide(){
+    alert(`${this.name} hide`);
+  }
+}
+let Rabbit=new Rabbit("White Rabbit");
+Rabbit.run(5);
+Rabbit.hide();
+//
+function f(phrase){
+  return class {
+    sayHi(){alert(phrase);}
+  }
+};
+class User extends f("Hello"){}
+new User().sayHi();
+//
+class Animal{
+  constructor(name){
+    this.speed=0;
+    this.name=name;
+  }
+  run(speed){
+    this.speed=speed;
+    alert(`${this.name} runs with speed${this.speed}`);
+
+  }
+  stop(){
+    this.speed=0;
+    alert(`${this.name} stands still`);
+  }
+}
+class Rabbit extends Animal{
+  hide(){
+    alert(`${this.name} hides`);
+  }
+  stop(){
+    super.stop();
+    this.hide();
+  }
+}
+let rabbit=new Rabbit("white Rabbit");
+rabbit.run(5);
+rabbit.stop();
+//
+class  Rabbit extends Animal{
+  stop(){
+    setTimeout(()=>super.stop(),1000);
+  }
+}
+//
+class Rabbit extends Animal{
+  constructor(...args){
+    super(...args);
+  }
+}
+//
+class Animal{
+  constructor(name){
+    this.speed=0;
+    this.name=name;
+  }
+}
+class Rabbit extends Animal{
+  constructor(name,earLength){
+    this.speed=0;
+    this.name=name;
+    this.earLength=earLength;
+  }
+}
+let rabbit2=new Rabbit("white Rabbit",10);
+//
+class Animal{
+     constructor(name){
+      this.speed=0;
+      this.name=name;
+     }
+}
+class Rabbit extends Animal{
+  constructor(name,earLength){
+    super(name);
+    this.earLength=earLength;
+  }
+}
+let rabbit3=new Rabbit("White Rabbot",10);
+alert(rabbit.name);
+alert(rabbit.earLength);
+//
+class Animal{
+  name='animal';
+  constructor(){
+    alert(this.name);
+  }
+}
+class Rabbit extends Animal{
+  name='rabbit';
+}
+new Animal();
+new Rabbit();
+//
+class Animal{
+  showNAme(){
+    alert('animal');
+  }
+  constructor(){
+    this.showNAme();
+  }
+}
+class Rabbit extends Animal{
+  showNAme(){
+    alert('rabbit');
+  }
+}
+new Animal();
+new Rabbit();
+//
+let animal={
+  name:"Animal",
+  eat(){
+    alert(`${this.name} eats`);
+  }
+};
+let rabbit5={
+  __proto__:animal,
+  name:"Rabbit",
+  eat(){
+    this.__proto__.eat.call(this);
+  }
+};
+rabbit.eat();
+//
+let animal3={
+  name:"Animal",
+  eat(){
+    alert(`${this.name} eat`);
+  }
+};
+let arabbit={
+      __proto__:animal,
+      eat(){
+        this.__proto__.eat.call(this);
+      }
+};
+rabbit.eat();
+//
+let animal1={
+      name:"Animal",
+      eat(){
+        alert(`${this.name} eat`);
+      }
+};
+let rabbit1={
+      __proto__:animal,
+      eat(){
+        this.__proto__.eat.call(this);
+      }
+};
+let longEar={
+      __proto__:rabbit,
+      eat(){
+        this.__proto__.eat.call(this);
+      } 
+};
+longEar.eat();
+//
+this.__proto__.eat.call(ths)
+longEar.__proto__.eat.call(this)
+rabbit.eat.call(this);
+//
+let animal5={
+      name:"Animal",
+      eat(){
+        alert(`${this.name} eats`);
+      }
+};
+let rabbit33={
+     __proto__:animal,
+     name:"Rabbit",
+     eat(){
+      super.eat();
+     }
+};
+let longEar3={
+      __proto__:rabbit,
+      name:"Long Ear",
+      eat(){
+        super.eat();
+      }
+};
+longEar.eat();
+//
+let animal11={
+  sayHi(){
+    alert(`Im an animal`);
+  }
+};
+let rabbit4={
+        __proto__:animal,
+        sayHi(){
+          super.sayHi();
+        }
+};
+let plant={
+  sayHi(){alert("Im a plant");
+  }
+};
+let tree={
+  __proto__:plant,
+  sayHi:rabbit.sayHi
+};
+tree.sayHi();
+//
+let animal33={
+    eat:function(){   
+    }
+};
+let rabbit22={
+     __proto__:animal,
+     eat:function(){
+      super.eat();
+     }
+};
+rabbit.eat();
+//
+class Animal{
+  constructor(name){
+    this.name=name;
+  }
+}
+class Rabbit extends Animal{
+  constructor(name){
+    this.created=Date.now();
+  }
+}
+let rabbit222=new Rabbit("White Rabbit");
+alert(rabbit.name);
+//
+class ExtendedClock extends Clock{
+    constructor(options){
+      super(options);
+      let{precision=1000}=option;
+      this.precision=precision;
+    }
+    start(){
+      this.render();
+      this.timer=setInterval(()=>this.render(),this.precision);
+    }
+}
+  </script>
+  <body></body>
+</html>

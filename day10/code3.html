@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function askPassword(ok,fail){
+            let password=prompt("passeord?",'');
+            if(password == "rockstar") ok();
+            else fail();
+        }
+        let user={
+            name:'john',
+            loginOk(){
+                alert(`${this.name} logged in`);
+            },
+            loginFail(){
+                alert(`${this.name} failed to log in`);
+            }
+        };
+        askPassword(user.loginOk,user.loginFail);
+        //
+        function askPassword1(ok,fail){
+            let passeord=prompt("password",'');
+            if(password =="rockstar") ok();
+            else fail();
+        }
+        let user1={
+             name:'john',
+             login(result){
+                alert(this.name + (result ? 'logged in ' :'failed to log in'));
+             }
+        };
+        // askPassword1(?,?);     
+    </script>
+<body>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        class animal{
+            constructor(name){
+                this.speed=0;
+                this.name=name;
+            }
+            run(speed){
+                this.speed=speed;
+                alert(`${this.name} runs with speed ${this.speed}.`);
+            }
+            stop(){
+                this.speed=0;
+                alert(`${this.name} stand still`);
+            }
+        }
+        let animal =new Animal("My animal");
+        //
+        class Rabbit extends Animal{
+            hide(){
+                alert(`${this.name} hides`);
+            }
+        }
+        let rabbit=new Rabbit("White Rabbit");
+        rabbit.run(5);
+        rabbithide();
+        //
+        function f(phrase){
+            return class{
+                sayHi(){
+                    alert(phrase);
+                }
+            };
+        }
+        class User extends f("Hello"){}
+        new User().sayHi();
+        //
+        class Animal{
+            constructor(name){
+                this.speed=0;
+                this.name=name;
+            }
+            run(speed){
+                this.speed=speed;
+                alert(`${this.name} runs with speed ${this.speed}`);
+            }
+            stop(){
+                this.speed=0;
+                alert(`${this.name} stands still`);
+            }
+        }
+        class Rabbit extends Animal{
+            hide(){
+                alert(`${this.name} hides`);
+            }
+            stop(){
+                super.stop();
+                this.hide();
+            }
+        }
+        let rabbit1=new Rabbit("White Rabbit");
+    rabbit1.run(5);
+     rabbit1.stop();
+     //
+     class Rabbit extends Animal{
+        stop(){
+            setTimeout(()=>super.stop(),1000);
+        }
+     }
+     //
+     class Animal{
+        constructor(name){
+            this.speed=0;
+            this.name=name;
+        }
+     }
+     class Rabbit extends Animal{
+        constructor(name,earLength){
+            this.speed=0;
+            this.name=name;
+            this.earLength=earLength;
+        }
+    }
+        let rabbit11 = new Rabbit("White Rabbit",10)
+            //
+            class Animal{
+             constructor(name){
+                this.speed=0;
+                this.name=name;
+             }
+            }
+            class Rabbit extends animal{
+                constructor(name,earLength){
+                    super(name);
+                    this.earLength= earLength;
+                }
+            }
+            let rabbit2=new Rabbit("White Rabbit",10);
+            alert(rabbit.name);
+            alert(rabbit1.earLength);
+            //
+            class Animal{
+                name='animal';
+                constructor(){
+                    alert(this.name);
+                }
+            }
+            class Rabbit extends Animal{
+                name='rabbit';
+            }
+            new Animal();
+            new Rabbit();
+            //
+            class Animal{
+                showName(){
+                    alert('animal');
+                }
+                constructor(){
+                    this.showName();
+                }
+            }
+            class Rabbit extends Animal{
+                showName(){
+                    alert('rabbit');
+                }
+            }
+            new Animal();
+            new Rabbit();
+            //
+            let animal={
+                name:"Animal",
+                eat(){
+                    alert(`${this.name} eats`);
+                }
+            };
+            let rabbit4={
+             __proto__:animal,
+             name:"Rabbit",
+             eat(){
+                this.__proto__.eat.call(this);
+             }
+            };
+            rabbit.eat();
+            //
+            let animal={
+                name:"Animal",
+                eat(){
+                    alert(`${this.name} eats`);
+                }
+            };
+            let arabbit={
+               __proto__:animal,
+               eat(){
+                this.__proto__.eat.call(this);
+               }
+            };
+            let longEar={
+                __proto__:rabbit,
+                eat(){
+                    this.__proto__.eat.call(this);
+                }
+            };
+            longEar.eat();
+            //
+            let animal={
+                dayHi(){
+                    alert(`I am an animal`);
+                }
+            };
+            let qrabbit={
+            __proto__:animal,
+            sayHi(){
+                super.sayHi();
+            }
+            };
+            let plant={
+                satHi(){
+                    alert("i am a plant");
+                }
+            };
+            let tree={
+                __proto__:plant,
+                sayHi:rabbit.sayHi
+            };
+            tree.sayHi();
+            //
+            let animal={
+                eat:function(){
+                   super.eat();
+                }
+            };
+            rabbit.eat();
+    //
+    class Animal{
+        constructor(name){
+            this.name=name;
+        }
+    }
+    class Rabbit extends Animal{
+        constructor(name){
+            super(name);
+            this.created=Date.now();
+        }
+    }
+    let rabbit3=new Rabbit("white Rabbit");
+    alert(rabbit.name);
+    //
+    class Extendedlock extends Clock{
+        constructor(options){
+            super(options);
+            let {precision=1000}=option;
+            this.precision= precision;
+        }
+        start(){
+            this.render();
+            this.timer=setInterval(()=>this.render(),this.precision);
+        }
+    };
+    </script>
+<body>
+</body>
+</html>

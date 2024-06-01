@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        class CoffeeMAchine{
+            waterAmount=0;
+            constructor(power){
+                alert(`Created a cpffee-machine,power:${power}`);
+            }
+        }
+        let CoffeeMAchine=new CoffeeMAchine(100);
+        CoffeeMAchine.waterAmount=200;
+        //
+        class CoffeeMAchine{
+            _waterAmount=0;
+            set waterAmount(value){
+                if(value<0){
+                    value=0;
+                }
+                this._waterAmount=value;
+            }
+            get waterAmount(){
+                return this._waterAmount;
+            }
+            constructor(power){
+                this._power=power;
+            }
+        }
+        let CoffeeMAchine=new CoffeeMAchine(100);
+        CoffeeMAchine.waterAmount=-10;
+        //
+        class CoffeeMAchine1{
+            constructor(power){
+                this._power=power;
+            }
+            get power(){
+                return this._power;
+            }
+        }
+        let CoffeeMAchine=new CoffeeMAchine(100);
+        alert(`power is:${CoffeeMAchine.power}W`);
+        CoffeeMAchine.power=25;
+        //
+        class CoffeeMAchine2{
+           _waterAmount=0;
+           setWaterAmount(value){
+            if(value<0)value=0;
+            this._waterAmount=value;
+           }
+        }
+        new CoffeeMAchine().setWaterAmount(100);
+        //
+        class CoffeeMAchine33{
+           #WaterLimit=200;
+           #fixWaterAmount(value){
+            if(value<0)return 0;
+            if(value > this.#WaterLimit) return this.#WaterLimit;
+           }
+           setWaterAmount(value){
+            this.#WaterLimit=this.#fixWaterAmount(value);
+           }
+        }
+        let CoffeeMAchine= new CoffeeMAchine();
+        CoffeeMAchine.#fixWaterAmount(123);
+        CoffeeMAchine.#waterLimit=1000;
+        //
+        class CoffeeMAchine33{
+       #waterAmount=0;
+       get waterAmount(){
+        return this.#waterAmount;
+       }
+       set waterAmount(value){
+        if(value<0)value=0;
+        this.#waterAmount=value;
+       }
+     }
+     let machine = new CoffeeMAchine();
+     machine.waterAmount=100;
+     alert(machine.#waterAmount);
+     //
+      class megaCoffeeMachine extends CoffeeMAchine{
+        method(){
+            // alert(this.#waterAmount);
+        }
+      }
+      //
+      class User{
+    sayHi(){
+        let fieldName="name";
+        alert(`Hello,${this[fieldName]}`);
+    }
+      }
+    </script>
+<body>
+</body>
+</html>

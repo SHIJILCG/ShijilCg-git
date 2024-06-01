@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        class Rabbit{}
+        let Rabbit=new Rabbit();
+        alert(Rabbit instanceof Rabbit);
+        //
+        class Rabbit{}
+        let Rabbit=new Rabbit();
+        alert(Rabbit instanceof Rabbit);
+        //
+        function Rabbit(){
+            alert(new Rabbit() instanceof Rabbit)
+        }
+        //
+        let arr=[1,2,3];
+        alert(arr instanceof Array);
+        alert(arr instanceof Object);
+        //
+        class Animal{
+            static[Symbol.hasInstance](obj){
+                if(obj.canEat) return true;
+            }
+        }
+        let obj={canEat:true};
+        alert(obj instanceof Animal);
+        //
+        class Animal{}
+        class Rabbit extends Animal{}
+        let Rabbit=new Rabbit();
+        alert(Rabbit instanceof Animal);
+        //
+        function Rabbit(){}
+        let Rabbit=new Rabbit();
+        Rabbit.prototype={};
+        alert(rabbit instanceof Rabbit);
+        //
+        let obj1={};
+        alert(obj);
+        alert(obj.toString());
+        //
+        let objectTOString=Object.prototype.toString;
+        let arr2=[];
+        alert(objectTOString.call(arr));
+        //
+        let s=Object.prototype.toString;
+        alert(s.call(123));
+        alert(s.call(null));
+        alert(s.call(alert));
+        //
+        let user={
+            [Symbol.toString]:"User"
+        };
+        alert({}.toString.call(user));
+        //
+        alert(window[Symbol.toStringTag]);
+        alert(XMLHttpRequest.prototype[Symbol.toStringTag]);
+        alert({}.toString.call(window));
+        alert({}.toString.call(new XMLHttpRequest()));
+        //
+        function A(){}
+        function B(){}
+        A.prototype=B.prototype={};
+        let a= new A();
+        alert(a instanceof B);
+        //
+    </script>
+<body>
+</body>
+</html>

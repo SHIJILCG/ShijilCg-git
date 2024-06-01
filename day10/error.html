@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        try{
+            alert('start of try runs');
+            alert('End of try runs');
+        }catch(err){
+            alert('Catch is ignored,because there are no error');
+        }
+        //
+        try{
+            alert('Stert of try runs');
+            lalala;
+        
+        alert('End of try (never reached)');
+        }catch(err){
+            alert(`Error has occurred`);
+        }
+        //
+        try{
+        //     {{{{{{{{{{{{
+        }catch(err){
+            alert("the engine cant understandthis code,its invalid");
+        }
+        try{
+            settimeiout(function(){
+           nosuchvariables;
+            },1000);
+        }catch(err){
+            alert("wont work");
+        }
+        //
+        setTimeout(function(){
+            try{
+                nosuchvariables;
+            }catch{
+               alert("error is caught here"); 
+            }
+        },1000);
+        //
+        try{
+
+        }catch(err){
+
+        }
+        //
+        try{
+            lalala;
+        }catch(err){
+            alert(err.name);
+            alert(err.message);
+            alert(err.stack);
+        }
+        //
+        let json='{"name":"john","age":30}';
+        let user=JSON.parse(json);
+        alert(user.name);
+        alert(user.age);
+        //
+        let json2="{bad json}";
+        try{
+            let user=JSON.parse(json);
+            alert(user.name);
+        }catch(err){
+            alert("our apologies the ddata has error,we'll try to request it one more time");
+            alert(err.name);
+            alert(err.messsage);
+        }
+        //
+        let json23='{"age":30}';
+        try{
+            let user=JSON.parse(json);
+            alert(user.name);
+        }catch(err){
+            alert("doesn't execute");
+        }
+        //
+        let error=new Error(message);
+        let error2=new SyntaxError(message);
+        let error3=new ReferenceError(message);
+        //
+        let error5=new Error("things happen ");
+        alert(error.name);
+        alert(error.message);
+        //
+        try{
+            JSON.parse("{bad json}");
+        }catch(err){
+            alert(err.name);
+            alert(err.message);
+        }
+        //
+        let json4='{"age":30}';
+        try{
+            let user=JSON.parse(json);
+            if(!user.name){
+                throw new SyntaxError("incomplete date:no name");
+            }
+            alert(user.name);
+        }catch(err){
+            alert("JSON Error:"+err.message);
+        }
+        //
+        let json6='{"age":30}';
+        try{
+            user=JSON.parse(json);
+        }catch(err){
+            alert("JSON Error :" + err);
+        }
+        //
+        try{
+            user={}
+        }catch(err){
+            if(err instanceof reportError){
+                alert('ReferenceError');
+            }
+        }
+        //
+        let json5='{"age":30}';
+        try{
+            let user=JSON.parse(json);
+            if(!user.name){
+                throw new SyntaxError("Incomplete data:no name");
+            }
+            blabla();
+            alert(user.name);
+        }catch(err){
+            if(err instanceof SyntaxError){
+                alert("jsonError:" +err.message);
+            }else{
+                throw err;
+            }
+        }
+        //
+        function readData(){
+            let jsson='{"age":30}';
+            try{
+                blabla();
+            }catch(err){
+                if(!(err instanceof SyntaxError)){
+                    throw err;
+                }
+            }
+        }
+        try{
+            read();
+        }catch(err){
+            alert("External catch got:" + err);
+        }
+        //
+        try{
+            alert('try');
+            if(confirm('Make ann error')) BAD_CODE();
+        }catch(err){
+            alert('catch');
+        }finally{
+            alert
+            ('finally');
+        }
+        //
+        let num=+prompt("")
+    </script>
+<body>
+</body>
+</html>

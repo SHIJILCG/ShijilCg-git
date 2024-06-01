@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let user={
+            firstname:"john",
+            sayHi(){
+                alert(`Hello,${this.firstname}`);
+            }
+        };
+        setTimeout(user.sayHi,1000)
+        //solution
+        let user1={
+            firstname:"john",
+            sayHi(){
+                alert(`Hello,${this.firstname}`);  
+            }
+        };
+        setTimeout(function(){
+            user.sayHi();
+        },1000);
+        //solution2
+        let user2={
+            firstname:"john",
+            sayHi(){
+                alert(`Hello,${this.firstname}`);
+            }
+        };
+        setTimeout(() => user.sayHi(),1000);
+        user2={
+            sayHi(){
+                alert("Another user in setTimeout");
+            }
+        }
+        //solution3
+        let user4={
+            firstname:"john",
+        };
+        function func(){
+            alert(this.firstname);
+        }
+        let funcUser=func.bind(user);
+        func();
+        //
+        let user5={
+            firstname:"john",
+        };
+        function func(phrase){
+            alert(phrase + ','+this.firstname);
+        }
+        let funcUser1=func.bind(user5);
+        funcUser1("hello");
+        //
+        let user6={
+            firstname:"john",
+            sayHi(){
+                alert(`Hello,${this.firstname}`);
+            }
+        };
+        let sayHi=user.sayHi.bind(user6);
+        sayHi();
+        setTimeout(sayHi,1000);
+        //
+        function mul(a,b){
+             return a*b;
+        }
+        let doubble=mul.bind(null,2);
+        alert(doubble(3));
+        alert(doubble(4));
+        alert(doubble(5));
+        //
+        function partial(func,...argsBound){
+            return function(...args){
+                return func.call(this,...argsBound,...args);
+            }
+        }
+        let user11={
+           firstname:"john",
+           say(time,phrase){
+            alert(`[${time}]${this.firstname}:${phrase}`);
+           }
+        };
+        user.sayNow=partial(user,say,new Date().getHours()+':'+new Date().getMinutes());
+        user.sayNow("Hello");
+        //
+        function f(){
+            alert(this);
+        }
+        let user={
+            g:f.bind(null)
+        };
+        user.g();
+        function f(){
+            alert(this.name);
+        }
+        f=f.bind({name:"john"}).bind({name:"pete"});
+        f();
+        function askPassword(ok,fail){
+            let password=prompt("passwoed",'');
+            if(password == "rockstar") ok();
+            else fail();
+        }
+        let user={
+            name:'john',
+            loginOk(){
+                alert(`${this.name} logged in`);
+            },
+            loginfail(){
+                alert(`${this,name} failed to log in`);
+            },
+        };
+        askPassword(user.loginOk,user.loginfail);
+    </script>
+<body>
+</body>
+</html>

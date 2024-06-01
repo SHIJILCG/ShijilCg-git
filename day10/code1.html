@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        // let user={
+        //     firstName:"john",
+        //     sayHi(){
+        //         alert(`Hii,${this.firstName}`);
+        //     }
+        // }
+        // sayHi();
+    //     let user={
+    //         firstname:"john",
+    //         say(a){
+    //             alert(`${a},${this.firstname}`);
+    //         }
+    //     };
+    //     let say =user.say.bind(user);
+    //     say("hallo");
+    //     say("bye");
+    // 
+    let user={
+        name:"john",
+        say(a){
+            alert(`${a},${this.name}`);
+        }
+    }
+    let say=user.say.bind(user);
+    say(200);
+    say(6666);
+    </script>
+<body>
+</body>
+</html>

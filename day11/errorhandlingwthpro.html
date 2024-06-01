@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        new Promise((resolve,reject)=>{
+            throw new Error("Whoops");
+        }).catch(alert);
+        new Promise((resolve,reject)=>{
+            reject(new Error("Whoops!"));
+        }).catch(alert);
+        ///////
+        new Promise((resolve,reject)=>{
+            resolve("ok");
+        }).then((result)=>{
+            throw new Error("Whoops");
+        }).catch(alert);
+        ///////
+        new Promise((resolve,reject)=>{
+            resolve("ok");
+        }).then((result)=>{
+            balbala();
+        }).catch(alert);
+        /////
+        new Promise((resolve,reject)=>{
+            throw new Error ("Whoops");
+        }).catch(function(error){
+            alert("the error is handled continu normally");
+        }).then(()=>alert("Next successful handler runs"));
+        ////////
+        new Promise((resolve,reject)=>{
+            throw new error("whoops");
+        }).catch(function(error){
+
+           if(error instanceof URIError){
+
+           }else{
+            alert("cant handle such error");
+            throw error;
+           }
+        }).then(function(){
+
+        }).catch(error=>{
+            alert(`the unknown error has occurred:${error}`)
+        });
+        ///////////////
+        new Promise(function(resolve,reject){
+            setTimeout(() => {
+              throw new Error ("Whoops");   
+            }, 1000);
+        }).catch(alert);
+        ///////
+        window.addEventListener('unhandledrejection',function(event){
+            alert(event.promise);
+            alert(event.reason);
+        });
+        new Promise(function(){
+            throw new Error("Whoops");
+        });
+        //////////
+    </script>
+<body>  
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        class Error{
+            constructor(message){
+                this.message=message;
+                this.name="Error";
+            }
+        }
+        ////
+        class ValiddationError extends Error{
+            constructor(message){
+                super(message);
+                this.name="ValidatoinError";
+            }
+        }
+        function test(){
+            throw new ValiddationError("Whoops");
+        }
+        try{
+            test();
+        }catch(err){
+            alert(err.message);
+            alert(err.name);
+            alert(err.stack);
+        }
+        ////
+        class ValidatoinError extends Error{
+            constructor(message){
+                super(message);
+                this.name="ValidationError";
+            }
+        }
+        function readUser(json){
+            let user=JSON.parse(json);
+            if(!user.age){
+                throw new ValidatoinError("No field :age");
+            }
+            if(!user.name){
+                throw new ValidatoinError("No field:name")
+            }
+            return user;
+        }
+        try{
+           let user=readUser('{"age":25}'); 
+        }catch(err){
+            if(err instanceof ValidatoinError){
+                alert("Invalid data:"+err.message);
+            }else if(err instanceof SyntaxError){
+                alert("JSON syntx Error:" + err.message);
+            }else{
+                throw err;
+            }
+        }
+        ////
+        class ValidationError extends  Error{
+            constructor(message){
+                super(message);
+                this.name="ValidationError";
+            }
+        }
+        class propertyRequiredError extends ValidationError{
+            constructor(property){
+                super("NO property:"+property);
+                this.name="propertyRequiredError";
+                this.property=property;
+            }
+        }
+        function readuser(json){
+            let user=JSON.parse(json);
+            if(!user.age){
+                throw new propertyRequiredError("age");
+            }
+            if(!user.name){
+                throw new propertyRequiredError("name");
+            }
+            return user;
+        }
+        try{
+            let user=readUser('{"age":25}');
+        }catch(err){
+            if(err instanceof ValidationError){
+                alert("Invalid data:" +err.message);
+                alert(err.name);
+                alert(err.property);
+            }else if(err instanceof SyntaxError){
+                alert("JSON syntax Error:" +err.message);
+            }else{
+                throw err;
+            }
+        }
+        /////
+        class MyError extends Error{
+            constructor(message){
+                super(message);
+                this.name=this.constructor.name;
+            }
+        }
+        class ValidationError extends MyError{}
+        class propertyRequiredError extends ValidationError{
+            constructor(property){
+                super("NO property:"+property);
+                this.property=property;
+            }
+        }
+        alert(new propertyRequiredError("field").name);
+        //////
+        class ReadError extends Error{
+            constructor(message,cause){
+                super(message);
+                this.cause=cause;
+                this.name='ReadError';
+            }
+        }
+        class ValidationError extends Error{}
+        class propertyRequiredError extends ValidationError{}
+        function ValidateUser(user){
+            if(!user.age){
+                 throw new propertyRequiredError("age"); 
+            }
+            if(!user.name)
+            {
+                throw new propertyRequiredError("name");
+            }
+        }
+        function readUser(json){
+            let  user;
+            try{
+                user=JSON.parse(json);
+            }catch(err){
+                if(err instanceof SyntaxError){
+                    throw new  ReadError("Syntax Error",err);
+                }else{
+                    throw err;
+                }
+            }
+            try{
+                ValidateUser(user);
+            }catch(err){
+                if(err instanceof ValidationError){
+                    throw new ReadError("Validation Error",err);
+                }else{
+                    throw err;
+                }
+            }
+        }
+        try{
+            readUser('{bad json}');
+        }catch(e){
+            if(e instanceof ReadError){
+                alert(e);
+                alert("Original error:"+e.cause);
+            }else{
+                throw e;
+            }
+        }
+        /////////
+        class FormatError extends SyntaxError{
+            constructor(message){
+                super(message);
+                this.name=this.constructor.name;
+            }
+        }
+        let err =new FormatError("formatting error");
+        alert(err.message);
+        alert(err.name);
+        alert(err.stack);
+        alert(err instanceof SyntaxError);
+        /////////  
+    </script>
+<body>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        class powerArray extends Array{
+            isEmpty(){
+                return this.length===0;
+            }
+        }
+        let arr=new powerArray(1,2,3,5,10,50);
+        alert(arr.isEmpty());
+        let filterdArr=arr.filter(item=>item>=10);
+        alert(filterdArr);
+        alert(filterdArr.isEmpty());
+        //
+        class powerArray extends Array{
+            isEmpty(){
+                return this.length===0;
+            }
+            static get [Symbol.species](){
+                return Array;
+            }
+        }
+        let arr2=new powerArray(1,2,5,10,50);
+        alert(arr.isEmpty());
+        let filterdArr2=arr.filter(item=>item>=10);
+        alert(filterdArr.isEmpty());
+        //
+    </script>
+<body>
+</body>
+</html>
