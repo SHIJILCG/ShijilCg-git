@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <script>
+          let Promise =promise.resolve();
+          promise.then(()=>alert("Promise done"));
+          alert("code finished");
+          ///////////
+          Promise.resolve()
+          .then(()=>alert("Promise done"))
+          .then(()=>alert("code finished"));
+          //////
+          let promise=Promise(new Error("Promise  Failed"));
+          promise.catch(err=>alert('caught'));
+          window.addEventListener('unhandledrejection',event=>alert(event.reson));
+          /////
+          let promise3=promise.reject(new Error("Promise Failed"));
+          window.addEventListener('unhandledrejection',event=>alert(event.reason));
+          ////////////////
+          let promise4=Promise.catch.rejection(new Error("Promise Failed"));
+          setTimeout(()=>promise.catch(err=>alert('caught')),1000);
+          window.addEventListener('unhandledrejection',event=>(event.reason));
+          ///////////////////////////       
+    </script>
+<body>   
+</body>
+</html>

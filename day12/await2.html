@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        async function f(){
+            return1;
+        }
+        /////////////////
+        async function f(){
+            return Promise.resolve(1);
+        }
+        f().then(alert);
+        /////////////////////
+        async function f(){
+            let Promise=new Promise((resolve,reject)=>{
+                setTimeout(()=>resolve("done"),1000)
+            });
+            let result=await Promise;
+            alert(result);
+        }
+        f();
+        //////////////
+        async function f(){
+            let promise=new Promise((resolve,reject)=>{
+                setTimeout(()=>resolve("done"),1000)
+            });
+            let result=await promise;
+            alert(result);
+        }
+        f();
+        /////////////////
+        async function showAvatar(){
+            let response=await fetch('/article/promise-chaining/user.json');
+            let user=await response.json();
+            let githubResponse=await fetch(`https://api.github.com/user/${user.nsme}`);
+            let githubUser=await githubResponse.json();
+            let img=document.createElement('img');
+            img.src=githubUser.avatar_url;
+            img.className="promise-avatar-example";
+            document.body.append(img);
+            await new Promise((resolve,reject)=>setTimeout(resolve,3000));
+            img.remove();
+            return githubUser;
+        }
+        showAvatar();
+        ////////////////
+        let response=await fetch('/article/promise-chaining/user.json');
+        let user=await response.json();
+        console.log(user);
+        /////////////////
+        (async()=>{
+            let response=await fetch('/article/promise-chaining-/user.json');
+            let user=await response.json();    
+        })
+    </script>
+<body>
+</body>
+</html>

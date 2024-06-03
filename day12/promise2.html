@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let promise=new Promise(function(resolve,reject){
+            ////////////////////////
+        })
+        //////////////
+        let promise3= new Promise(function(resolve,reject){
+            setTimeout(()=>resolve("done"),1000);
+        });
+        ////////////////////
+        let promise2=new Promise(function(resolve,reject){
+            setTimeout(()=>reject(new Error ("Whoops")),1000);
+        });
+        ////////////////////////
+        let promisew=new Promise(function(resolve,reject){
+            resolve("done");
+            reject(new Error("..."));
+            setTimeout(()=>resolve("..."));
+        });
+        ////////////////////////////
+        let promise1=new Promise(function(resolve,reject){
+            resolve(123);
+        });
+        //////////////////////////////////
+        promise.them(
+            function(result){},
+            function(error){}
+        );
+        /////////////////////
+        // let promise11=new Promise(function(resolve,reject){
+        //     setTimeout=> resolve("done"),1000);)};
+        promise.then(
+            result=>alert(result),
+            error=>alert(error)
+        );
+        ///////////////////////
+        let promise33=new Promise(function(resolve,reject){
+            setTimeout(()=>reject(new Error("Whoops")),1000);
+        });
+    promise.then(
+        result=>alert(result),
+        error=>alert(error)
+    );
+    /////////////////////////////////
+    let promise3333=new Promise((resolve,reject)=>{
+       setTimeout(()=>reject(new Error("Whoops")),1000);
+    });
+    promise.catch(alert);
+    ////////////////////////////
+    new Promise((resolve,reject)=>{
+    })
+    // // .finally(()=> stop loading indicator)
+    // .then(result=>show result,err=>show error)
+    ////////////////////
+    new Promise((resolve,reject)=>{
+        setTimeout(()=>resolve("value"),2000);
+    })
+    .finally(()=>alert("Promise ready"))
+    .then(result=>alert(result));
+    //////////////////////////
+    new Promise((resolve,reject)=>{
+        throw new Error("error");
+    })
+    .finally(()=>alert("Promise ready"))
+    .catch(err=>alert(err));
+    /////////////
+    let promise21=new Promise(resolve=>resolve("done"));
+    promise.then(alert);
+    /////////////
+    function loadScript(src,callback){
+        let script=document.createElement('script');
+        script.src=src;
+        script.onload=()=>callback(null,script);
+        script.omerror=()=>callback(new Error(`script load error for${src}`));
+        document.head.append(script);
+    }
+    ////////////////////
+    function loadScript(src){
+        return new Promise(function(resolve,reject){
+            let script=document.createElement('script');
+            script.src=src;
+            script.onload=()=>resolve(script);
+            script.head=()=>reject(new Error (`Script load error for${src}`));
+            document.head.append(script);
+        });
+    }
+    //////////////////////////////////
+    let  promise122=loadScript("https://cdnjs.cloudflare.com/ajax/libs/loadash.js/4.17.11/loash.js");
+    promice.then(script=>alert(`${script.src} is loaded!`)),
+    error=>alert(`Error:${error.message}`);
+    promise.then(script=>alert('Another handler.....'));
+    ///////////////////////////
+    function delay(ms){
+        /////////////////////
+    }
+    delay(3000).then(()=>alert('runs after 3 second'));
+    ////////////////////////
+    showCircle(150,150,100).then(div=>{
+        div.classList.add('message-ball');
+        div.append("hello world");
+    })
+    ///////////////////////////////// 
+    </script>
+<body>
+</body>
+</html>

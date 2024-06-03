@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function loadScript(src){
+            let script=document.createElement('script');
+            script.src=src;
+            document.head.append(script);
+        }
+        ////////////////////////
+        function loadScript(src){
+            let script=document.createElement('script');
+            script.src=src;
+            document.head.append(script);
+        }
+        loadScript('/my/script.js')
+        ////////
+        function loadedScript1(src,callback){
+            let script=document.createElement('script');
+            script.src=src;
+            script.onload=()=>callback(script);
+            document.head.append(script);
+        }
+        ///////////////////////////////////////
+    function loadScript(src,call){
+     let script=Document.createElement('script');
+     script.src=src;
+     script.omload=()=>callback(script);
+     document.head.append(script);
+    }
+    loadScript('https://cdjs.cloudflarre.com/ajax/lib/lodash.js/3.2.0/loadash.js',script=>{
+        alert(`cool,the script ${script.src} is loaded`);
+        alert(_);
+    });
+    ////////////////////////////
+    loadScript('/my/script.js',function(script){
+        alert(`cool the ${script.js}`,function(script){
+            alert(`cool the second script is loaded`);
+        });
+    });
+    ////////////////////////////////////////////
+    function loadedScript(src,callback){
+        let script=document.createElement('script');
+        script.src=src;
+        script.onload=()=>callback(null,script);
+        script.onerror=()=>callback(new Error (`Script load error for ${src}`));
+        document.head.append(script);
+    }
+    /////////////////////////////
+    loadScript('/my/script.js',function(error,script){
+        if(error){
+              ////////////////////////////
+        }else{
+              ///////////////////////////
+        }
+    });
+    ////////////////////////////////
+    loadScript('1.js',function(error,script){
+        if(error){
+            handleError(error);
+        }else{
+            loadScript('2.js',function(error,script){
+                if(error){
+                    handleError(error);
+                }else{
+                    loadedScript('3.js',function(error,script){
+                        if(error){
+                            handleError(error);
+                        }else{
+                            /////////////////
+                        }
+                    })
+                }
+            })
+        }
+    })
+    //////////////////////
+    loadScript('1.js',step1);
+    function step1(error,script){
+        if(error){
+            handleError(error);
+        }else{
+            loadScript('2.js',step2)
+        }
+    }
+    function step2(error,script){
+        if(error){
+            handleError(error);
+        }else{
+            loadScript('3.js',srep3);
+        }
+    }
+    function step3(error,script){
+        if(error){
+            handleError(error);
+        }else{
+            ////////////////////////
+        }
+    }
+    //////////////////////
+    </script>
+<body>
+</body>
+</html>

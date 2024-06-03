@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        async function f(){
+        return 1;
+        }
+        f().then(alert);
+        ////////////////
+        let value=await Promise;
+        //////////////|
+        async function f(){
+            let promise=new Promise((resolve,reject)=>{
+                setTimeout(()=>resolve("done"),1000)
+            });
+            let result=await promise;
+            alert(result);
+        }
+        f();
+        ///////////////////////
+        function f() {
+            let promise=promise.resolve(1);
+            // let result= await promise;
+        }
+        /////////////////////
+        async function showAvatar(){
+            let Response=await fetch('/article/promise-chaining/user.json');
+            let user=await Response.json();
+            let githubResponse=await fetch(`https://api.github.com/users/${user.name}`);
+            let loadGithbUSer=await githubResponse.json();
+            let img=document.createElement('img')
+            img.classNAme="promise-avatar-example";
+            document.body.append(img);
+            await new promise((resolve,reject)=>setTimeout(resolve,3000));
+            img.remove();
+            return loadGithbUSer;
+        }
+        showAvatar();
+        //////////////////////////////////////
+        let response=await fetch(`/article/promise/-chaining/user.json`);
+        let user=await response.json();
+        consol.log(user);
+        /////////////////////////
+        (async()=> {
+            let response=await fetch('/article/promise-chaining/user.json');
+            let user =await response.josn();
+        })();
+        //////////////////////////////////////////
+        class thenable{
+            constructor(num){
+                this.num=num;
+            }
+            then(resolve,reject){
+                alert(resolve);
+                setTimeout(()=>resolve(this.num*2),1000);
+            }
+        }
+        async function f(){
+            let result=await new thenable(1);
+            alert(result);
+        }
+        f();
+        ///////////////////////////\\
+        class Waiter{
+            async wait(){
+                return await Promise.resolve(1);
+            }
+        }
+        new waiter()
+        .wait()
+        .then(alert);
+        ///////////////////////////////////////
+        async function f(){
+            throw new Error ("whoops");
+        }
+        async function f(){
+            try{
+                let response=await fetch('https://n0-such-url');
+            }catch(err){
+                  alert(err);
+            }
+        }
+        f();
+        ///////////////////////////////
+        async function f(){
+            try{
+                let response=await fetch('/on-user-here');
+                let user=await response.json();
+            }catch(err){
+                alert(err);
+            }
+        }
+        f();
+        ////////////////////////
+        async function f(){
+            let response=await fetch('http://no-such-url');
+        }
+        f().catch(alert);
+        //////////////////////////////////////////
+        let result=await Promise.all([
+            fetch(url1),
+            fetch(url2),
+        ]);
+    </script>
+<body>
+</body>
+</html>

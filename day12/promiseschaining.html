@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        new Promise(function(resolve,reject){
+            setTimeout(()=>resolve(1),1000);
+        }).then(function(result){
+         alert(result);
+         return result*2;
+        }).then(function(result){
+            alert(result);
+            return result*2;
+        }).then(function(result){
+            alert(result);
+            return result*2;
+        }).then(function(result){
+        return result*2;
+        }).then(function(result){
+            alert(result);
+            return result*2;
+        });
+        ////////////
+        let promise=new Promise(function(resolve,reject){
+            setTimeout(()=>resolve(1),1000);
+        });
+        promise.then(function(result){
+            alert(result);
+            return result*2;
+        });
+        ///////////////
+        new Promise(function(resolve,reject){
+            setTimeout(()=>resolve(result*2),1000);
+        });
+        alert(result);
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>resolve(result*2),1000);
+        });
+        ////////////////
+       function loadJson(url){
+            return fetch(url)
+            .then(Response=>response.json());
+       }
+       function loadGithubUder(name){
+        return loadJson(`https://api.github.com/useres/${name}`);
+       }
+       function showAvatar(githubUser){
+        return new promise(function(resolve,reject){
+            let img=document.createElement('img');
+            img.src=githubUser.avatar_url;
+            img.className="promise-avatar-examole";
+            document.body.append(img);
+            setTimeout(()=>{
+                img.remove();
+                resolve(githubUser);
+            },3000);
+        });
+       }
+       loadJson('/articlr/promise-chaining/user.json')
+       .then(user=>loadGithubUder(user.name))
+       .then(showAvatar)
+       .then(githubUser=>alert(`finished showning${githubUser.name}`));
+       /////////////////
+       promise.then(f1)
+       .catch(f2);
+       /////////////
+       promise
+       .then(f1,f2);
+       ////////////////    
+    </script>
+<body>
+</body>
+</html>

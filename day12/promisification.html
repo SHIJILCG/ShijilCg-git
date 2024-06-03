@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function loadScript(src,callback){
+            let script=document.createElement('script');
+            script.src=src;
+            script.onload=()=>callback(null ,script);
+            script.onerror=()=>callback(new Error(`script losd error for${src}`));
+            document.head.append(script);
+        }
+        /////////
+        let loadScriptpromise=function(src){
+            return new Promise((resolve,reject)=>{
+                loadScript(src,(err,script)=>{
+                    if(err) reject(err);
+                    else resolve(script);
+                });
+            });
+        };
+        //////////
+        function Promisify(){
+            return function (...args){
+                return new Promise((resolve,rjest)=>{
+                    function callback(err,result){
+                        if(err){
+                            reject(err);
+                        }else{
+                            resolve(result);
+                        }
+                    }
+                    args.push(callback);
+                    f.call(this,...args);
+                });
+            };
+        }
+        let loadScriptpromise1=Promisify(loadScript);
+        loadScriptpromise(1).then(1);
+        ///////////////
+        function Promisify2(f,manyAsrgs=false){
+            return function (...args){
+                return new Promise ((resolve,reject)=>{
+                    function callback2(err,...result){
+                        if(err){
+                            reject(err);
+                        }else{
+                            resolve(manyAsrgs?result:result[0]);
+                        }
+                    }
+                    args.push(callback);
+                    f.call(this,...args);
+                });
+            };
+        }
+        // f=Promisify(F,true);
+        // f(...)then(arrayofREsult=>...,err=>....);
+    </script>
+<body>
+</body>
+</html>

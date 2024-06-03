@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function* generateSequence(){
+            yield1;
+            yield 2;
+            return 3;
+        }
+        //////////////////
+        function* gererateSEquence(){
+            yield 1;
+            yield 2;
+            yield 3;
+        }
+        let generator=gererateSequence();
+        alert(generator);
+        //////////////////////////////////////
+        function *gererateSEquence(){
+            yield 1;
+            yield 2;
+            yield 3;
+        }
+        let generator1=gererateSEquence();
+        let one =generator.next();
+        alert(JSON.stringify(one));
+        ////////////////////
+        function* gererateSEquence(){
+            yield 1;
+            yield 2;
+            yield 3;
+        }
+        let generator2=gererateSEquence();
+        for(let value of generator2){
+            alert(value);
+        }
+    </script>
+<body>
+</body>
+</html>

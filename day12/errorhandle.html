@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        fetch('/article/promise-chaining/user.json')
+        .then(Response(Response=>Response.json()))
+        .then(user=>fetch(`https://api.github.com/users/${user.name}`))
+        .then(Response=>Response.json())
+        .then(githubUser=>new Promise((resolve,reject)=>{
+            let img=document.createElement('img');
+            img.src=githubUser.avatar_url;
+            img.className="promise-avatar-example";
+            document.body.append(img);
+            setTimeout(()=>{
+                img.remove();
+                resolve(githubUser);
+            },3000);
+        }))
+        .catch(error=>alert(error.message));
+        ///////////////////////
+        new Promise((resolve ,reject)=>{
+            throw new Error("Whoops");
+        }).catch(alert);
+        new promise((resolve,reject)=>{
+            reject(new Error("Whoops"));
+        }).catch(alert);
+        ///////////////
+        new Promise ((reesolve,reject)=>{
+                 resolve("ok");
+        }).then((result)=>{
+            balabla();
+        }).catch(alert);
+        /////////////////////////
+        new Promise ((resolve,reject)=>{
+            throw new error("Whoops");
+        }).catch(function(error){
+            alert("the error is handled, continue normally");
+        }).then(()=>alert("Next successfull handler runs"));
+        ///////////////////////
+        new promise ((resolve,reject)=>{
+            throw new Error("Whoops");
+        }).catch(function(error){
+           if(error instanceof URIError){
+            /////////////////
+           }else{
+           alert("Cant handle such error");
+           throw error;
+           }
+        }).then(function(){
+             /////////////////////////////
+        }).catch(error=>{
+            alert(`the unknow error has occurred:${error}`);
+        });
+        ////////////////////////
+        new Promise(function(resolve,reject){
+            setTimeout(()=>{
+                throw new Error("whoops");
+            },1000);
+        }).catch(alert);
+        /////////////
+        window.addEventListener('unhandledrejection',function(event){
+            alert(event.promise);
+            alert(event.reason);
+        });
+        new Promise(function(){
+            throw new Error ("Whoops");
+        });
+        //////////////////////
+      new Promise((resolve,reject)=>{
+        throw new Error("Whoops");
+      }).catch(alert);
+      //////////////
+      new Promise((resolve,reject)=>{
+        reject(new Error("Whoops"));
+      }).catch(alert);
+      /////////////////////
+      new Promise ((resolve,reject)=>{
+        resolve("ok");
+      }).then((result)=>{
+        throw new Error("Whoops");
+      }).catch(alert);
+      new Promise((resolve,reject)=>{
+        resolve("ok");
+      }).then((result)=>{
+        balabla();
+      }).catch(alert);
+    </script>
+<body>
+</body>
+</html>
