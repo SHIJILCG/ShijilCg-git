@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    let range = {
+      from: 1,
+      to: 5,
+      [Symbol.asyncIterator]() {
+        return {
+          current: this.from,
+          last: this.to,
+          async next() {
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            if (this.current <= this.last) {
+              return { done: false, value: this.current++ };
+            } else {
+              return { done: true };
+            }
+          },
+        };
+      },
+    };
+(async()=>{
+    for await(let value of range){
+        alert(value);
+    }
+})()
+/////////////////////////////
+function* gererateSEquence(start,end){
+    for(let i=start;i<=end;i++){
+        yieldi;
+    }
+}
+for(let value of gererateSEquence(1,5)){
+    alert(value);
+}
+/////////////////////
+// let range3={
+//         from:1,
+//         to:5,
+//         [Symbol.iterator](){
+//             return<Object with next to make range iterable>
+//         }
+// }
+/////////////////////
+let range44={
+          from:1,
+          to:5,
+          *[Symbol.iterator](){
+            for(let value=ths.from;value<=this.to;value++){
+                yield value;
+            }
+          }
+};
+for(let value of range){
+    alert(value);
+}
+//////////////
+async function*generateSequence(start,end){
+    for(let i=start;i<=end;i++){
+        await new Promise(resolve=>setInterval(resolve,1000));
+        yield i;
+    }
+}
+(async ()=>{
+    let generator44=gererateSEquence(1,5);
+    for await(let value of generator44){
+        alert(value);
+    }
+})();
+//////////////
+async function* fetchCommits(repo){
+    let url='https://api.github.com/repos/&{repo}/commits';
+    while(url){
+        const response=await fetch(url,{
+            headers:{'User-Agent':'Our script'},
+        });
+        const body=await response.json();
+        let nextpage=response.headers.get('Link').match(/<(.*?)>;rel="next"/);
+        nextpage=nextpage?.[1];
+        url=nextpage;
+        for(let commits of body){
+            yield commit;
+        }
+    }
+}
+///////////////
+(async ()=>{
+    let count =0;
+    for await(const commit of fetchCommits('javascript-tutorial/en.javascript.info')){
+        console.log(commit.author.login);
+        if(++count==100){
+            break;
+        }
+    }
+})();
+  </script>
+  <body></body>
+</html>

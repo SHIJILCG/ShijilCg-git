@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+     <script>
+        function curry(f){
+            return function(a){
+                return function(b){
+                    return f(a,b);
+                };
+            };
+        }
+        function sum(a,b){
+            return a+b;
+        }
+        let curriedSum=curry(sum);
+        alert(curriedsum(1)(2));
+        /////////////
+        function sum(a,b){
+            return a + b;
+        }
+        let curriedSum1=_.curry(sum);
+        alert(curriedSum(1,2));
+        alert(curriedSum(1)(2));
+        /////////////////////////////
+        function log(date,importance,message){
+            alert(`[${date.getHours()}:${date.getMinutes()}][${importance}]&{messge}`);
+        }
+        //////////////////////////////////
+        log=_.curry(log);
+        log(new Date(),"DEBUG","some debug");
+        log(new Date())("DEBUG")("some debug");
+        ////////////////
+        let logNow=log(new Date());
+        logNow("INFO","message");
+        let  degugNow=logNow("BEBUG");
+        debugNow("message");
+        /////////////////////////////////
+        function curry(func){
+            return function curried(...args){
+                if(args.length>=func.length){
+                    return func.apply(this,args);
+                }else{
+                    return function(...args2){
+                        return curried.apply(this,args.concat(args2));
+                    }
+                }
+            };
+        }
+        ///////////////////////////////
+        function sum(a,b,c){
+            return a+b+c;
+        }
+        let curriedSum11=curry(sum);
+        alert(curriedSum(1,2,3));
+        alert(curriedSum(1)(2,3));
+        alert(curriedSum(1)(2)(3));
+        ///////////////////////////////////////////
+        function curried(...args){
+            if(args.length>=func.length){
+                return func.apply(this,args);
+            }else{
+                return function(...args2){
+                    return curried.apply(this,args.concat(args2));
+                }
+            }
+        };
+        ///////////////////
+     </script>
+<body>
+</body>
+</html>

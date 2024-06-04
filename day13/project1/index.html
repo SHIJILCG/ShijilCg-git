@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" />
+    <title>photo Library collage</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1 class="header-text">photo Library collage</h1>
+      </header>
+      <div class="container">
+        <div class="item item--scrollable">
+          <!thumbnails>
+          <div class="thumbnails-container"></div>
+          <div class="item">
+            <div>
+              <div class="action">
+                <select
+                  name="
+                    "
+                  id=""
+                  class="select"
+                ></select>
+                <button class="btn btn--primary btn-create-collage">
+                  Create college
+                </button>
+                <button class="btn btn--secondary btn-start-over">
+                  Start over
+                </button>
+                <button
+                  class="btn btn--success btn-download"
+                  onclick="{downloadCollage}"
+                >
+                  Download
+                </button>
+              </div>
+              <din class="previewContainer">
+                <div class="spinnerContainer spinnerContainer--hidden"></div>
+              <div class="spinner">
+                <p class="spinnertext"></p>
+              </div>
+              <canvas class="canvas"></canvas>
+            </div>
+            <div class="loggerContainer">
+              <p class="logger-title">Logger:</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="index.js">
+    </script>
+  </body>
+</html>

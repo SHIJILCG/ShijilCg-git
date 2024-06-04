@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let user={name:"john"};
+        user=null;
+        ///////
+        let user1={name:"john"};
+        let admin=user;
+        user=null;
+        /////////////
+        let user3={name:"john"};
+        //////////
+        let user4={name:"john"};
+        let admin4=new weakRef(user);
+        ///////////
+        user=null;
+        ////////////
+        let ref=admin.deref();
+        if(ref){
+            ////////////
+        }else{
+            ////////////////////
+        }
+        ////////////////////////
+        function fetchImg(){
+            //////////
+        }
+        function weakRefCAche(fetchImg){
+            const imgCache=new Map();
+            return(imgName)=>{
+                const catchedImg=imgCache.get(imgName);
+                if(catchedImg?.deref()){
+                    return catchedImg?.deref();
+                }
+                const newImg=fetchImg(imgName);
+                imgCache.set(imgName,new weakRef(newImg));
+                return newImg;
+            };
+        }
+        const getCachedImg=weakRefCAche(fetchImg);
+        ///////////////
+        function cleanCallback(heldValue){
+            ///////////
+        }
+        const registry=new FinalizationRegistry(cleanCallback);
+        /////////////////////////////////////
+       let user33={
+         name:"john"
+       };
+       const registry1=new FinalizationRegistry((heldValue)=>{
+        console.log(`${heldValue}has been collected by the garbage collector`);
+       });
+       /////////////////////////////////////////
+       function fetch(){
+        ///
+       }
+       function weakRefCache(fetching){
+        const imgCache=new Map();
+        const registry=new FinalizationRegistry((imgName)=>{
+            const catchedImg=imgCache.get(imgName);
+            if(caching && !caching.deref())imgCache.delete(imgName);
+        });
+        return (imgName)=>{
+            const cachineddImg=img.get(imgName);
+            if(cachedImg?.deref()){
+                return cachineddImg?.deref();
+            }
+            const newImg=fetchImg(imgName);
+            imgCache.set(imgName,new weakRef(newImg));
+            return newImg;
+        };
+       }
+       const getCachedImg1=weakRefCache(fetchImg);
+       /////////////     
+    </script>
+<body>
+</body>
+</html>

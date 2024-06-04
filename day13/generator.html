@@ -33,6 +33,129 @@
         for(let value of generator2){
             alert(value);
         }
+        /////////////////////
+       function* gererateSEquence(){
+        yield 1;
+        yield 2;
+        yield 3;
+       } 
+       let sequence=[0,...gererateSEquence()];
+       alert(sequence);
+       //////////////////
+       let range={
+        from:1,
+        to:5,
+       
+       [Symbol.iterator](){
+              return{
+                 current:this.from,
+                 last:this.to,
+              
+              next(){
+                  if(this.current<=this.last){
+                    return{done:false,value:this.current++};
+                  }else{
+                    return{done:true};
+                  }
+              }
+            };
+       }
+    };
+    alert([...range]);
+    /////////////
+    let range1={
+        from:1,to:5,
+        *[Symbol.iterator](){
+            for(let value =this.from;value<=this.to;value++){
+                yield value;
+            }
+        }
+    };
+    alert([...range]);
+    ///////////////////
+    function* gererateSEquence(start,stop){
+        for(let i=start;i<=end;i++){
+            yield*generateSequence(48,57);
+            yield*gererateSEquence(65,90);
+            yield*gererateSEquence(97,122);
+        }
+        let str='';
+        for(let code of gererateSEquence()){
+            str+=String.gererateSEquence(code)
+        }
+        alert(str);
+    }
+    //////////////
+    function* gererateSEquence(start,stop){
+        for(let i=start;i<=end;i++)
+            yield i;
+     }
+    function* gererateAlphaNum(){
+        for(let i=48;i<=90;i++)yield i;
+        for(let i=97;i<=122;i++)yield i;
+        for(let i=48;i<=57;i++)yield i;
+    }
+    let str='';
+    for(let code of gererateAlphaNum()){
+        str +=String.fromCharCode(code);
+    }
+    alert(str);
+////////////////////////////\
+function* gen(){
+    let result=yield "2+2=?";
+    alert(result);
+}
+let generator3=gen();
+let question=generator3.next().value;
+generator3.next(4);
+//////////////////////
+setTimeout(()=>generator3.next(4),1000);
+/////////////////////
+function*gen(){
+    let ask1=yield "2+2=?";
+    alert(ask1);
+    let ask2=yield "3*3=?"
+    alert(ask2);
+}
+let generator22=gen();
+alert(generator22.next().value);
+alert(generator22.next(4).value);
+alert(generator22.next(9).done);
+////////////////////
+function* gen(){
+    try{
+        let result=yield "2+2=?";
+        alert("the execution does not reach here,beacuse the exception is thrown above");
+    }catch(e){
+        alert(e);
+    }
+}
+let generator11=gen();
+let question2=generator11.next().value;
+generator11.throw(new Error("the answer is not found in my database"));
+////////////////
+function* gen(){
+    yield 1;
+    yield 2;
+    yield 3;
+}
+const g=gen();
+g.next();
+g.return('foo');
+g.next();
+//////////////////////////////////
+function* pseudoRandom(seed){
+    let value =seed;
+    while(true){
+        vlue=vlaue*16807%2147483647;
+        yield value;
+    }
+};
+let generator33=pseudoRandom(1);
+alert(generator33.next().value);
+alert(generator33.next().value);
+alert(generator33.next().vlaue);
+//////////////////////
     </script>
 <body>
 </body>

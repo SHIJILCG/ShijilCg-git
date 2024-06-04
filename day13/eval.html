@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let result=eval(code);
+        ///////////////////
+        let code='alert("hello")';
+        eval(code);
+        /////////////
+        let value=eval('1+1');
+        alert(value);
+        ///////////////
+        let value2=eval('1+1');
+        alert(value);
+        ///////////
+        let value5=eval('let i=0;++i');
+        alert(value);
+        //////////////
+        let a=1;
+        function f(){
+            let a=2;
+            eval('alert)(a)');
+        }
+        f();
+        //////////////
+        let x=5;
+        eval("x=10");
+        alert(x);
+        ////////////
+        eval("let x=5;function f() {}");
+        alert(typeof x);
+        ///////////////////
+        let x1=1;
+        {
+            letx=5;
+            window.eval('alert(x)');
+        }
+        let x2=1;
+        {
+            let x=5;
+            window.eval('alert(x)');
+        }
+        ////////////////
+        let f=new Function('a','alert(a)');
+        f(5);
+        ///////////////
+         let expr=prompt("type an artthmetic express",'2*3+2'); 
+         alert(eval(expr));
+         //////////////////////
+         ///////////////////
+    </script>
+<body>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let target={};
+        let proxy=new Proxy(target,{});
+        proxy.test=5;
+        alert(target.test);
+        alert(proxy.test);
+        for(let key in Proxy)alert(key);
+        //////////////////////
+        let numbers=[0,1,2];
+        numbers=new Proxy(numbers,{
+            get(target,prop){
+                if(prop in target){
+                return target[prop];
+                }else{
+                    return 0;
+                }
+            }
+        });
+        alert(numbers[1]);
+        alert(numbers[123]);
+        ///////////////////
+        let dictionary={
+            'Hello':'Hola',
+            'Bye':'Adios'
+        };
+        alert(dictionary['Hello']);
+        alert(dictionary['Welcome']);
+        ////////////////
+        let dictionary1={
+          'Hello':'Hola',
+          'Bye':'Adios'
+        };
+        dictionary=new Proxy (dictionary,{
+            get(target,phrase){
+                if(phrase in target){
+                    return target[phrase];
+                }else{
+                      return phrase;
+                }  
+            }
+        });
+        alert(dictionary['Hello']);
+        alert(dictionary['Welcome to Proxy']);
+        //////////////////////
+        let numbers1=[];
+        numbers=new Proxy(numbers1,{
+            set(target,prop,valu){
+                if(typeof val=='number'){
+                    target[prop]=val;
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        });
+        numbers1.push(1);
+        numbers1.push(2);
+        alert("Length is:"+numbers.length);
+        numbers1.push("teest");
+        alert("THis line is never reached(error in the line above)");
+        ////////////////////////
+        let user={
+            name:"john",
+            age:30,
+            _password:"***"
+        };
+        user=new Proxy(user,{
+            ownKeys(target){
+                return Object.keys(target).filter(key=>!key.startWith('_'));
+            }
+        });
+        for(let key in user)alert(key);
+        alert(Object.keys(user));
+        alert(Object.values(user));
+        ////////////////////
+        let user3={};
+        user=new Proxy(user,{
+            ownKeys(target){
+                return['a','b','c'];
+            }
+        });
+        alert(Object.keys(user));
+        /////////////////////////////
+        let user4={};
+        user=new Proxy(user,{
+            ownKeys(target){
+                return['a','b','c'];
+            },
+            getOwnPropertyDescriptor(target,prop){
+                return{
+                    enumerable:true,
+                    configurable:true
+                };
+            }
+        });
+        alert(Object.keys(user));
+        ///////////////////////////////
+        let user44={
+             name:"john",
+             _password:"secret"
+        };
+        alert(user._password);
+        ////////////////////////
+        let user5={
+            name:"john",
+            _password:"***"
+        };
+        user3=new proxy(user,{
+            get(target,prop){
+                if(prop.startWith('_')){
+                    throw new Error("Access denied");
+                }
+                let value=target[prop];
+                return(typeof value==='function')?value.bind(target):value;
+            },
+            set(target,prop,val){
+                if(prop.startWith('_')){
+                    throw new Error("Access denied");
+                }else{
+                    target[prop]=val;
+                    return true;
+                }
+            },
+            deleteProperty(target,prop){
+                if(prop.startWith('_')){
+                    throw new Error("Access denied");
+                }else{
+                    delete target[prop];
+                    return true;
+                }
+            },
+            ownKeys(target){
+                return Object.keys(target).filter(key=>!key.startsWith('_'));
+            }
+        });
+        try{
+            alert(user._password);
+        }catch(e){alert(e.message);}        /////////////////////////////
+         try{
+            user._password="test";
+         }catch(e){alert(e.message);}
+         try{
+            delete user._password;
+         }catch(e){alert(e.message);}
+         for(let key in user)alert(key)
+         ///////////////
+        //  get(target,prop) {
+        //     let value=target[prop];
+        //     return (typeof value==='function')?value.bind(target):value;
+        //  }
+         /////////////////////////////
+         user={
+           checkPassword(value){
+            return value===this._password;
+           }
+         }
+         //////////////
+         let range={
+            start:1,
+            end:10
+         };
+         range=new proxy(range,{
+            has(target,prop){
+                return prop>=target.start && prop<=target.end;
+            }
+         });
+         alert(5 in range);
+         alert(50 in range);
+         ////////////////////
+         function delay(f,ms){
+            return function(){
+                setTimeout(()=>{
+                    f.apply(this,arguments),ms
+                })
+            };
+         }
+         function sayHi(user){
+            alert(`Hello,${user}`);
+         }
+         sayHi=delay(sayHi,3000);
+         sayHi("john");
+         /////////////////
+         function delay(f,ms){
+            return function(){
+                setTimeout(()=>f.apply(this,arguments),ms);
+            };
+         }
+         function sayHi(user){
+            alert(`Hello,${user}!`);
+         }
+         alert(sayHi.length);
+         sayhi=delay(sayhi,3000);
+         alert(sayHi.length);
+         /////////////////////////
+         function delay(f,ms){
+           return new Proxy
+         }
+         //////////////////////////
+         let user2={
+            name:"john",
+         };
+         user=new Proxy(user,{
+            get(target,prop,recevier){
+               alert(`GET${prop}`);
+               return Reflect.set(target,prop,val,recevier); 
+            }
+         });
+         let name=user.name;
+         user.name="pete";
+         /////////////////
+         let user={
+            _name:"Guest",
+            get name(){
+                return this._name;
+            }
+         };
+         let userProxy=new proxy(user,{
+            get(target,prop,recevier){
+                return target[prop];
+            }
+         });
+         alert(userProxy.name);
+         //////////////////
+         let user={
+            _name:"Guest",
+            get name(){
+                return this._name;
+            }
+         };
+         let userProxy2=new proxy(user,{
+            get(target,prop,recevier){
+                return target[prop];
+            }
+         });
+    let admin={
+        _proto_:userProxy,
+        _name:"Admin"
+    };
+    alert(admin.name);
+    ///////////////////
+    let userProxy4=new proxy(user,{
+        get(target,prop,recevier){
+            return Reflect.get(target,prop,recevier);
+        }
+    });
+    let sdmin={
+        _proto_:userProxy,
+        _name:"Admin"
+    };
+    alert(admin.name);
+    /////////////////////
+    // get(target,prop,recevier){
+    //     return Reflect.get(...arguments);
+    // }
+    let map=new Map();
+    let proxy=new proxy(map,{});
+    proxy.set('test,1');
+    ///////////////////
+    let map1=new Map();
+    let proxy=new proxy(map,{
+        get(target,prop,recevier){
+            let value=Reflect.get(...arguments);
+            return typeof value=='function'?value.bind(target):value;
+        }
+    });
+    proxy.set('test,1');
+    alert(proxy.get('test'));
+    //////////////////
+    class User{
+        #name="Guest";
+        getName(){
+            return this.#name;
+        }
+    }
+    let user=new User();
+    user=new proxy(user,{});
+    alert(user.getName);
+    //////////////////
+    class User{
+        #name="Guest";
+        getName(){
+            return this.#name;
+        }
+    }
+    let user=new User();
+    user=new proxy(user,{
+        get(target,prop,recevier){
+           let value=Reflect.get(...arguments);
+           return typeof value=='function'?value.bind(target):value; 
+        }
+    });
+    alert(user.getName());
+    ///////////////
+    let allUsers=new set();
+    class User{
+        constructor(name){
+            this.name=name;
+            allUsers.add(this);
+        }
+    }
+    let user=new User("john");
+    alert(allUsers.has(user));
+    user=new Proxy(user,{});
+    alert(allUsers.has(User));
+    ///////////////////////////
+    let Object={
+        datd:"Valuable data"
+    };
+    let {proxy,revoke}=Proxy.revocable(Object,{});
+    alert(proxy.data);
+    revoke();
+    alert(proxy.data);
+    ////////////////
+    let revokes=new WeakMap();
+    let Object3={
+        data:"valuable data"
+    };
+    let{Proxy,revoke2}=proxy.revocable(Object,{});
+    revoke=revokes.get(proxy);
+    revoke();
+    alert(proxy.data);
+    ////////////////////
+    let user={
+        name:"john"
+    };
+    function wrap(target){
+        return new Proxy(target,{
+            get(target,prop,recevier){
+                if(prop in target){
+                    return Reflect.get(target,prop,recevier);
+                }else{
+                    throw new ReferenceError(`Property doesn't exist:"${prop}"`)
+                }
+            }
+        });
+    }
+    user=wrap(user);
+    alert(user.name);
+    alert(user.age);
+    ///////////////////
+    let array=[1,2,3];
+    array=new proxy(array,{
+      get(target,prop,recevier){
+        if(prop<0){
+            prop=+prop+target.length;
+        }
+        return Reflect.get(target,prop,recevier);
+      }
+    });
+    alert(array[-1]);
+    alert(array[-2]);
+    //////////////////////////////
+    let handlers =Symbol('handlers');
+    function makeobservable(target){
+        target[handlers]=[];
+        target.observe=function(handler){
+            this[handlers].push(handler);
+        };
+        return new Proxy(target,{
+            set(target,Property,value,recevier){
+                let success=Reflect.set(...arguments);
+                if(success){
+                    target[handlers].forEach(handler => handler(Property,value));
+                        
+                    }
+                    return success;
+                }
+            });
+        }
+    let user={};
+    user=makeobservable(user);
+    user.observe((key,value)=>{
+        alert(`SET${key}=${value}`);
+    });
+    user.name="john"
+    </script>
+<body>
+</body>
+</html>
