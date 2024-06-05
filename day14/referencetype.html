@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let user={
+            name:"john",
+            hi(){alert(this.name);},
+            bye(){alert("bye");}
+        };
+        user.hi();
+        (user.name=="john"?user.hi:user.bye)();
+        //////////////////////////////
+        user.hi();
+        (user.name=="john"?user.hi:user.bye)();
+        ////////////////////
+        let user3={
+            name :"john",
+            hi(){alert(this.name);}
+        };
+        let hi=user.hi;
+        hi();
+        //////////////////////////////////////////
+        let user4={
+            name:"john",
+            go:function(){alert(this.name)}
+        }
+        (user.go)()
+        ////////////////////////////////////////
+        let obj,method;
+        obj={
+            go:function(){alert(this);}
+        };
+        obj.go();
+        (obj.go)();
+        (method=obj.go)();
+        (obj.go||obj.stop)();
+        ///////////////////////////////////
+    </script>
+<body>
+</body>
+</html>

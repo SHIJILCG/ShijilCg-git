@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let user={name:"john"};
+        user=null;
+        ////////////
+        let user1={name:"john"};
+        let admin=user;
+        user=null;
+        ///////////////
+        let user2={name:"john"};
+        let admin3=new WeakMap(user);
+        /////////////
+        let ref=admin.deref();
+        if(ref){
+            //////////////
+        }else{
+            //////////////////
+        }
+        ///////////////////
+        function fetching(){
+            ////////////
+        }
+        function weakRefCache(fetching){
+            const imgCache=new Map;
+            return(imgName)=>{
+                const cachedImg=imgCache.get(imgName);
+                if(cachedImg?.deref());{
+                   return cachedImg?.deref();
+                }
+                const newImg=fetchImg(imgName);
+                imgCache.set(imgName,new WeakRef(newImg));
+                return newImg;
+            }
+        };
+        const getCachedImg=weakRefCache(fetching);
+        //////////////////
+        function fetching(){
+            //
+        }
+        function weakRefCache(fetchImg){
+            const imgCache=new Map();
+            const registry=new FinalizationRegistry((imgName)=>{
+                const cachedImg=imgcache.get(imgName);
+                if(cachedImg && !cachedImg.deref())imgCache.delete(imgName);
+            });
+            return (imgName)=>{
+                const cachedImg=imgCache.get(imgName);
+                if(cachedImg?.delete()){
+                    return cachedImg?.deref();
+                }
+                const newImg=fetchImg(imgName);
+                imgCache=set(imgName,new WeakRef(newImg));
+                registry.registry(newImg,imgName);
+                return newImg;
+            };
+        }
+        const getCachedImg1=weakRefCache(fetching);
+        ///////////////////////   
+    </script>
+<body>
+</body>
+</html>

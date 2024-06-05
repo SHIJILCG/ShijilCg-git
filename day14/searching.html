@@ -1,0 +1,136 @@
+<!-- <!DOCTYPE html>
+<html>
+    <script>
+      let elem=document.getElementById('elem');
+      elem.style.background='red';  
+    </script>
+<body>
+    <div class="elem">
+        <div class="elem-content">Element</div>
+    </div>
+</body>
+</html> -->
+<!-- <html>
+
+    <body>
+        <div class="elem">
+            div.i
+        </div>
+    </body>
+</html> -->
+<!-- <html>
+    <body>
+        <ul><li>
+            the
+        </li></ul>
+        <ul><li>has</li><li>passed</li></ul>
+        <script>
+            let elements=document.querySelectorAll('ul>li:last-child');
+            for(let elem of elements){
+                alert(elem.innerHTML);
+            }
+        </script>
+    </body>
+</html> -->
+<!-- <html>
+    <a href="https://example.com/file.zip">...</a>
+    <a href="httpsaa://ya.ru">...</a>
+    <script>
+        for(let elem of document.body.childen){
+            if (elem.matches('a[href$="zip"]')){
+                 alert("the archive reference:"+elem.href);
+            }
+        }
+    </script>
+</html> -->
+<!-- <html>
+    <body>
+        <h1>Contents</h1>
+        <div class="container">
+            <ul class="book"><li class="chapter">chapter 1</li>
+                <li class="chapter">chapter 2</li>
+            </ul>
+        </div>
+        <script>
+            let chapter=document.querySelector('.chapter');
+            alert(chapter.closest('.book'));
+            alert(chapter.closest('.contents'));
+            alert(chapter.closest('h1'));
+        </script>
+    </body>
+</html> -->
+<!-- <html>
+    <body>
+        <table id="table">
+            <tr><td>
+                Your age:
+            </td>
+            <td>
+                <label>
+                    <input type="radio" name="age" value="young" checked>less than 18
+                </label>
+                <label>
+                    <input type="radio" name="age" value="mature">from 18 to 50
+                </label>
+                <label>
+                    <input type="radio" name="age" value="senior">more than 60
+                </label>
+            </td>
+        </tr>
+        </table>
+        <script>
+            let input=table.getElementsByTagName('input');
+            for(let input of input){
+                alert(input.value+':'+input.checked);
+            }
+        </script>
+    </body>
+</html> -->
+<!-- <html>
+    <body>
+        <form name="my-form">
+            <div class="article">Article</Article></div>
+            <div class="long-article">Long Article</div>
+        </form>
+        <script>
+            let form=document.getElementsByName('my-form')[0];
+            let article=form.getElementsByClassName('article');
+            alert(articles.length);
+        </script>
+    </body>
+</html> -->
+<!-- <div>
+    <script>
+        let divs=document.getElementsByTagName('div');
+        alert(divs.length);
+    </script>
+    <div>Second div</div>
+    <script>
+        alert(divs.length);
+    </script>
+</div> -->
+<!-- <div>First div</div>
+<script>
+    let divs=document.querySelectorAll('div');
+    alert(divs.length);
+</script>
+<div>Second div</div>
+<script>
+    alert(divs.length);
+</script> -->
+<html>
+    <script>
+        let table =document.grtElementById('age-table')
+        table.grtElementByTagName('label')
+        document.querySelectorAll('#age-table label')
+        table.rows[0].cell[0]
+        table.getElementsByTagName('td')[0]
+        tabel.querySelector('td')
+        let form =document.getElementsByName('search')[0]
+        document.querySelector('form [name="search"]')
+        form.getElementsByTagName('input')[0]
+        form.querySelector('input')
+        let input =form.querySelectorAll('input')
+        input[inputs.length-1]
+    </script>
+</html>

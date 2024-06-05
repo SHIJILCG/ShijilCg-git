@@ -320,9 +320,189 @@
             },
             set (target,prop,receiver){
                 alert(`SET${prop}=${val}`);
+                return Reflect.set(target,prop,val,receiver);
             }
         });
-        l
+        let name=user.name;
+        user.name="pete";
+        /////////////////////
+        let user={
+            _name:"Guest",
+            get name(){
+                return this._name;
+            }
+        };
+        let userProxy=new Proxy(user,{
+            get(target,prop,receiver){
+                return target[prop];
+            }
+        });
+        alert(userProxy.name);
+        ///////////////////////////////////////
+        let user={
+            _name:"Guest",
+            get name(){
+                return this._name;
+            }
+        };
+        let userProxy3=new Proxy(user,{
+            get (target,prop,val){
+                return target[prop];
+            }
+        });
+        let admin={
+            __proto__:userProxy,
+            _name:"admin"
+        };
+        alert(admin.name);
+        /////////////////////////////////////////////
+        let user={
+            _name:"Guest",
+            get name(){
+                return this._name;
+            }
+        };
+        let userProxy1=new proxy(user,{
+            get (target,prop,receiver){
+                return Reflect.get(target,prop,receiver);
+            }
+        });
+        let admin2={
+            __proto__:userProxy,
+            _name:"Admin"
+        };
+        alert(admin.name);
+        /////////////////////
+        let map=new Map();
+        let proxy=new Proxy(map,{
+            get(target,prop,receiver){
+                let value=Reflect.get(...arguments);
+                return typeof value=='fuinction'?value.bind(target):value;
+            }
+        });
+        proxy.set('test',1);
+        alert(proxy.get('test'));
+        /////////////////////
+        class User{
+            #name="Guest";
+            getName(){
+                return this.#name;
+            }
+        }
+        let user=new user();
+        user=new Proxy(user,{});
+        alert(user.getName());
+        /////////////////////////
+        class User{
+            #name="Guest";
+            grtName(){
+                return this.#name;
+            }
+        }
+        let user=new User();
+        User=new Proxy(user,{
+            get(target,prop,reciver){
+                let value =Reflect.get (...arguments);
+                return typeof value=='function'?value.bind(target):value;
+            }
+        });
+        alert(user.getName);
+        ////////////////////////////////
+        let allUsers=new set();
+        class User{
+            constructor(name){
+                this.name=name;
+                allUses.add(this);
+            }
+        }
+        let user=new User("john");
+        alert(allUsers.has(user));
+        user= new Proxy(user,{});
+        alert(allUsers.has(user));
+        //////////////
+        let Object={
+            data:"valuable data"
+        };
+        let {proxy,revoke}=proxy.revocable(Object,{});
+        alert(proxy.data);
+        revoke();
+        alert(proxy.data);
+        //////////////////
+        let revokes=new WeakMap();
+        let object={
+            data:"valuable data"
+        };
+        let {proxy,revokess}=proxy.removeEventListener(object,{});
+        revokess.set(proxy,revokess);
+        revokess=revokes.get(proxy);
+        revoke();
+        alert(proxy.data);
+        //////////////////////////////////
+        let user={
+            name:"john"
+        };
+        function Wrap(target){
+            return new Proxy(target,{
+                get (target,prop,receiver){
+                    if(prop in target){
+                       return Reflect.get(target,prop,receiver);
+                    }else{
+                        throw new ReferenceError(`proerty doesn't exits:"${prop}"`)
+                    }
+                }
+            });
+        }
+        user=Wrap(user);
+        alert(user.name);
+        alert(users.age);
+        ////////////////////////////
+      let array=[1,2,3];
+      array =new Proxy(array,{
+        get(target,prop,receiver){
+            if(prop<0){
+                prop=+prop+target.length;
+            }
+            return Reflect.get(target,prop,reciver);
+        }
+      }) ;
+      alert(array[-1]);
+      alert(array[-2]);
+      ////////////////////////////////////\
+      let handlers=Symbol('handlers');
+      function makeObservable(target){
+        target[handlers]=[];
+        target.observe=function(handlers){
+            this[handlers].push(handlers);
+        };
+        return new Proxy(target,{
+            set(target,proerty,value,receiver){
+                let success=Reflect.set(...arguments);
+                if(success){
+                    target[handlers].forEach(handlers=>handlers(proerty,value));
+                }
+            return success;
+            }
+        });
+      }
+      let user={};
+      user=makeObservable(user);
+      user.observe((key,value)=>{
+        alert(`SET${key}=${value}`);
+      });
+      user.name="john";
+      ////////////////////
+      function delay(f,ms){
+        
+        return function(){
+            setTimeout(()=>f.apply(this,arguments),ms);
+        };
+    }
+      function sayHi(user){
+        alert(`Hello,${user}`);
+      }
+    sayHi=delay(sayHi,3000);
+    sayHi("john");
+    //////////////////
 </script>
 <body>
 </body>

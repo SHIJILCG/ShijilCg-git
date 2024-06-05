@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <script>
+      let result=eval(code);
+      ////////////////
+      let code=`alert("Hello")`;
+      eval(code);
+      //////////////////
+      let value=eval('1+1');
+      alert(value);
+      /////////////////
+      let value2=eval('let 1=0;++i');
+      alert(value);
+      ////////////////////
+      let a=1;
+      function f(){
+        let a=2;
+        eval('alert(a)');
+      }  
+      f();
+      ////////////////
+      let x=5;
+      eval("X=10");
+      alert(x);
+      ///////////////////////
+      eval("let x=5;functionf() {}");
+      alert(typeof x);
+      ///////////////////////
+      let x1=1;
+      {
+        let x=5;
+        window.eval('alert(x)');
+      }
+      ///////////////////
+      let f=new Function('a','alert(a)');
+      f(5);
+      ///////////////////////////////////////
+      let expr=prompt("type an arithematic expression?",'2*3+2');
+      alert(eval(expr));
+      ///////////////////////////   
+    </script>
+<body>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        alert("\x7A");
+        alert("\xA9");
+        /////////////////
+        alert("\u00A9");
+        alert("\u044F");
+        alert("\u2191");
+        alert("\u2191");
+        //////////////////
+        alert("\u{20331}");
+        alert("\u{1F60D}");
+        /////////////
+        alert('x'.length);
+        alert('b'.length);
+        alert('e'.length);
+        /////////////
+        alert('x'[0]);
+        alert('x'[1]);
+        ////////////
+        alert('x'.charCodeAt(0).toString(16));
+        alert('x'.charCodeAt(0).toString(16));
+        ///////////////////////////////////////
+        let s1='s\u0307\u0323';
+        let s2='s\u0323\u0307';
+        alert(`s1:${S1},S2:{S2}`);
+        alert(s1==s2);
+        /////////////
+        alert("S\u0307\u0323".normalize().length);
+        alert("S\u0307\u0323".normalize()=="\u1e68");
+        /////////////////////
+    </script>
+<body>
+</body>
+</html>

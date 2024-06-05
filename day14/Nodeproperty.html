@@ -1,0 +1,58 @@
+<html>
+    <script>
+        alert(document.body instanceof HTMLBodyElement);
+        alert(document.body instanceof HTMLElement);
+        alert(document.body instanceof Element);
+        alert(document.body instanceof Node);
+        alert(document.body instanceof EventTarget);
+        //////////////////////////////////////////
+        // interface HTMLInputElement:HTMLElement{
+            
+        // }
+        let elem= document.body;
+        alert(elem.nodeType);
+        alert(elem.firstChild.nodeType);
+        alert(document.nodeType);
+        /////////////////////////////////
+        alert(document.body.firstChild.tagName);
+        alert(document.body .firstChild.nodeName);
+        alert(document.tagName);
+        alert(document.nodeName);
+        ////////////////////
+        alert(document.body.innerHTML);
+        document.body.innerHTML='the new BODY';
+        ////////////////////////////////////
+        document.body.innerHTML='<b>test';
+            alert(document.body.innerHTML);
+            let div =document.querySelector('div');
+            div.outerHTML='<P>A new element</P>';
+            alert(div,outerHTML);
+            let text=document.body.firstChild;
+            alert(text.data);
+            let common=text.nextSibling;
+            alert(Comment.data);
+
+    </script>
+    <body>  
+        <p>A paragraph</p>
+        <div>A div</div>
+        <div id="elem">Hello<b>World</b></div>
+        <div>Hlo bro</div>
+        Hello
+        <div id="news">
+            <h1>Headline</h1>
+            <p>Martian attack people</p>
+        </div>
+        <div id="elem1"></div>
+        <div class="elem2"></div>
+        <div>both divs below are hidden</div>
+        <div hidden>with the ATTRibute "hidden"  </div>
+        <div id="elem">Javascript assigned the property "hidden"</div>
+        <script>
+            alert(news.textContent);
+            let name=prompt("What your name?",'<b>WINNIE-THE-POOH</b>');
+            elem1.innerHTML=name;
+            elem2.innerHTML=name; 
+        </script>
+    </body>
+</html>
