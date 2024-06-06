@@ -1,0 +1,213 @@
+<!-- <html>
+    <body>
+        <div class="elem">
+            <div class="elem-content"></div>
+        </div>
+        <script>
+            let elem=document.getElementById('elem');
+            elem.style.background='red';
+        </script>
+    </body>
+</html> -->
+<!-- <html>
+    <body>
+        <ul>
+            <li>The</li>
+            <li>test</li>
+        </ul>
+        <ul>
+            <li>has</li>
+            <li>passed</li>
+        </ul>
+        <script>
+            let element=document.querySelectorAll('ul,li.:last-child');
+            for(let elem of elemment){
+                alert(elem.innerHTML);
+            }
+        </script>
+    </body>
+</html> -->
+<!-- <a href="https://example.com/file.zip">...</a>
+<a href="https://ya.ru">...</a>
+<script>
+    for(let elem of document.body.children){
+        if(elem.matches('a[herf$=zip]')){
+            alert("The archive reference"+elem.herf);
+        }
+    }
+</script> -->
+<!-- <html>
+    <body>
+        <h1>Contents</h1>
+        <div class="contents"><ul class="book"><li class="chapter">chapter1</li>
+            <li class="chapter">Chapter2</li>
+        </ul></div>
+        <script>
+            let chapter=document.querySelector('.chapter');
+            alert(chapter.closest('.book'));
+            alert(chapter.closest('.contents'));
+            alert(chapter.closest('.h1'));
+        </script>
+    </body>
+</html> -->
+<!-- <html>
+    <body>
+        <table id="table">
+            <tr>
+                <td>Your age</td>
+                <td>
+                    <label type="radio",name="age",value="young",checked>less than 18</label>
+                    <label type="radio",name="age",value="mature">from 18 to 50</label>
+                    <label type="radio" name="'age" value="senior">more than 60 </label>
+                </td>
+            </tr>
+        </table>
+        <script>
+            let inputs =table.getElementsByTagName('input');
+            alert(input.value+':'+input.checked);
+        </script>
+    </body>
+</html> -->
+<!-- <html>
+    <body>
+        <form name="my-form">
+            <div class="art">Article</div>
+            <div class="long-article">Long-article</div>
+        </form>
+        <script>
+            let form=document.getElementsByName('my-form')[0];
+            let articles=form.getElementsByClassName('article');
+            alert(articles.length);
+        </script>
+    </body>
+</html> -->
+<!-- <html>
+    <body>
+        <div>First div</div>
+        <script>let div=document.getElementsByTagName('div');
+        alert(divs.length);
+        </script>
+        <div>Second div</div>
+        <script>
+            alert(divs.length);
+        </script>
+    </body>
+</html> -->
+<!-- <html><body>
+    <div>First div</div>
+    <script>
+        let divs=document.querySelectorAll('div');
+        alert(divs.length);
+    </script> 
+    <script>
+        alert(divs.length);
+    </script>
+</body></html> -->
+<!-- <html>
+    <script>
+        let tabel=document.getElementById('age-tabel')
+        tabel.getElementsByTagName('label')
+        document.querySelectorAll('#age-table label')
+        tabel.rows[0].cells[0]
+        tabel.getElementsByTagName('td')[0]
+        tabel.querySelector('td')
+        let form =document.getElementsByTagName('search')[0]
+        document.querySelector('form[name-"search"]')
+        form.getElementsByTagName('input')[0]
+        form.querySelector('input')
+        let input=form .querySelectorAll('input')
+        input[input.length-1]
+        / -->
+    <!-- </script>
+</html> -->
+<!-- chatDiv.innerHTML+="<div>Hello<img src='smile.gif'/>!</div>";
+chat.innerHTML+="How goes"; -->
+<!-- <html>
+    <body>
+        <div id="Hello">
+           Hello<b>World</b>
+        </div>
+        <script>
+            alert(elem.outerHTML);
+        </script>
+    </body>
+</html> -->
+<!-- <html>
+    <body>
+        <div>Hello World</div>
+        <script>
+            let div=document.querySelector('div');
+            div.outerHTML='<p>A new element</p>';
+            alert(div.outerHTML);
+        </script>
+    </body>
+</html> -->
+<!-- <html>
+    <body>
+        Hello
+        <script>
+            let text=document.body.firstChild;
+            alert(text.data);
+            let Comment=text.nextSibling;
+            alert(Comment.data);
+        </script>
+    </body>
+</html> -->
+<!-- <html>
+    <div id="news">
+        <h1>Headline</h1>
+        <p>Martians attack people</p>
+    </div>
+    <script>
+        alert(news.textContent);
+    </script>
+</html> -->
+<!-- <html>
+    <body>
+        <div id="elem1"></div>
+        <div id="elem2"></div>
+    </body>
+    <script>
+        let name=prompt("What's your name?","<b>Winnie-the-pooh!<b>");
+            elem1.innerHtml=name;
+            elem2.textContent=name;
+    </script>
+</html> -->
+<!-- <html>
+    <body>
+        <div>Both divs below are hidden</div>
+        <div hidden>With the attribute the property "hidden"</div>
+        <div id="elem">Javascript assigned the property"hidden"</div>
+    </body>
+    <script>
+        elem.hidden=true;
+    </script>
+</html> -->
+<!-- <html>
+    <body>
+        <div id="elem">A blinking element</div>
+    </body>
+    <script>
+        setInterval(()=>elem.hidden=!elem.hidden,1000);
+    </script>
+</html> -->
+<!-- <html>
+    <body>
+        <input type="text" id="elem" value="value">
+    </body>
+    <script>
+        alert(elem.type);
+        alert(elem.id);
+        alert(elem.value);
+    </script>
+</html> -->
+<!-- <html>
+    <body>
+    </body>
+    <script>
+        let body=document.body;
+        body.innerHTML="<--"+body.tagName+"-->";
+        <!-- alert(body.firstChild.data); -->
+    <!-- </script>
+</html>  -->
+

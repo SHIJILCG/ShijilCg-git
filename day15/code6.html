@@ -1,0 +1,62 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined selectors Example</title>
+    <style>
+    .highlight{
+       font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+   <ul>
+    <li class="item-special"> item 1</li>
+    <li class="item">item 2</li>
+    <li class="item-special">item 3</li>
+   </ul>
+   <button id="highlightSpecialBtn">highlight special items</button>  
+   <script>
+        const specialItems=document.querySelectorAll('.item.special');
+        document.querySelector('#highlightspecialBtn').addEventListener('click',()=>{
+                specialItems.forEach(item=>{
+                    item.classList.add('highlight');
+                });
+        });
+   </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Selectors Example</title>
+    <style>
+        .highlight {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="item special">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item special">Item 3</li>
+    </ul>
+    <button id="highlightSpecialBtn">Highlight Special Items</button>
+
+    <script>
+        // Selecting all list items with both 'item' and 'special' classes
+        const specialItems = document.querySelectorAll('.item.special');
+
+        // Adding a click event to highlight all special items
+        document.querySelector('#highlightSpecialBtn').addEventListener('click', () => {
+            specialItems.forEach(item => {
+                item.classList.add('highlight');
+            });
+        });
+    </script>
+</body>
+</html>

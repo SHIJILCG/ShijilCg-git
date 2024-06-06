@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelectorAllExample</title>
+    <style>
+        .highlight{
+           color: blue;
+        }
+    </style>
+</head>
+<body>
+   <h1 id="title">Hellow World</h1>
+   <p class="description">This is a paragraph</p>
+   <p class="description">this is another paragrph</p> 
+   <button id="changecolorBtn">change All colors</button>
+   <script>
+    const allparagraphs=document.querySelectorAll('.description');
+    document.querySelector('#changecolorBtn').addEventListener('click',()=>{
+         allparagraphs.forEach(paragraph=>{
+            paragraph.classList.add('highlight');
+         });
+    });
+   </script>
+</body>
+</html>

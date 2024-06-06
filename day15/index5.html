@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h2>Notification is on the right</h2>
+    <p>
+        lorem ipum dolor sit amet ,consectetur adipisicing elit.Dolorum aspernature quam ex eaque inventore quod voluptatem adipisci omnis nemo nulla fugit iste numquam ducimus cumque ,minia porro ea quidem maxime necessitatibus beatae labore soluta voluptatum magnam condequatur sit laboriodam velit  execepturi laborum sequi eos placeaet et iure ipsum officiis soluta temporibus.tempore dicta ullam delectus numquam consectetur quisquam explicabo culpa  execepuri placeat quo sequi molestias reprehenderit hic at nemo cumque voluptates voluptates quidem repellendus mariores unde earum molestiae ad
+    </p>
+    <script>
+        function showNoification({top=0,right=0,className,html}){
+            let notification=document.createElement('div');
+            notification.className="notification";
+            if(className){
+                notification.classList.add (clasName);
+            }
+            notification.style.top=top+'px';
+            notification.style.right=right=right+'px';
+            notification.innerHTML=html;
+            document.body.append(notification);
+            setTimeout(()=>notification.remove(),1500);
+        }
+        let i=1;
+        setInterval(()=>{
+            showNoification({
+                top:10,
+                right:10,
+                html:'Hello' + i++,
+            });
+        },2000);
+    </script>
+</body>
+</html>

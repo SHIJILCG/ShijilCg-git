@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>getElementById Example</title>
+</head>
+<body>
+    <h1 id="header">Hello World!</h1>
+    <button onclick="changeText()">Change Text</button>
+
+    <script>
+        function changeText() {
+    // Get the element by its ID
+    var headerElement = document.getElementById("header");
+    
+    // Change the text content of the element
+    headerElement.textContent = "Text Changed!";
+}
+    </script>
+</body>
+</html>

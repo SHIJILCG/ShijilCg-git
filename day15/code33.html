@@ -1,0 +1,34 @@
+<!-- <html>
+    <body>
+        <h1 style="align-items: center;"> Welcome to my webpage</h1>
+        <div id="my">
+            <button onclick="click()">Cick me</button>
+        </div>
+    </body>
+    <script>
+        let a=prompt("Enter your name");
+        var my1=document.getElementById("my");
+        my1.textContent=a;
+    </script>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Name</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Welcome to my webpage</h1>
+    <div id="my">
+        <button onclick="displayPrompt()">Click me</button>
+    </div>
+    <script>
+        function displayPrompt() {
+            let a = prompt("Enter your name");
+            if (a) {
+                var my1 = document.getElementById("my");
+                my1.textContent = "Hello, " + a + "!";
+            }
+        }
+    </script>
+</body>
+</html>

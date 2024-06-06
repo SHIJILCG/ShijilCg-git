@@ -1,0 +1,156 @@
+<!-- <html>
+     <body>
+    </body>
+    <input id="body" type="...">
+    <input id="input" type="text">
+    <script>
+        document.body.myData={
+            name:'Caesar',
+            title:'Imperator'
+        };
+        alert(document.body.myData.title);
+        /////////////////////////////
+        document.body.sayTagName=function(){
+            alert(this.tagName);
+        };
+        document.body.sayTagName();
+        //////////////////////////////
+        Element.prototype.sayHi=function(){
+            alert(`Hello,i'm${this.tagName}`);
+        };
+        document.documentElement.sayHi();
+        document.body.sayHi();
+        /////////////////////////
+        alert(document.body.id);
+        alert(document.body.something);
+        ///////////////////////////////////
+        alert(input.type);
+        alert(body.type);
+        //////////////////////////////
+
+    </script> -->
+    <!-- <body   data-about="Elephants"> -->
+        <!-- <div id="elem" about="Element"></div>
+        <script>
+            alert(elem.getAttribute('About'));
+            elem.setAttribute('Test',123);
+            alert(elem.outerHTML);
+            for(let attr of elem.getAttributes){
+                alert(`${attr.name}=${attr.value}`);
+            }
+        </script> -->
+        <!-- <input>
+        <script>
+            let input=document.querySelector('input');
+            input.setAttribute('id','id');
+            alert(input.id);
+            input.id='newId';
+            alert(input.getAttribute('id'));
+        </script> -->
+        <!-- <input type="checkbox" id="input" checked>checkbox
+        <script>
+            alert(input.getAttribute('checked'));
+            alert(input.checked);
+        </script> -->
+        <!-- <div id="div" style="color:red;font-size: 120%;">Hello</div>
+        <script>
+            alert(div.getAttribute('style'));
+            alert(div.style);
+            alert(div.style.color)
+
+        </script> -->
+        <!-- <a href="#hello" id="a">Link</a>
+        <script>
+            alert(a.getAttribute('href'));
+            alert(a.href);
+        </script> -->
+        <!-- <div show-info="name"></div>
+        <div show-info="age"></div>
+        <script>
+            let user={
+                name:pete,
+                age:25
+            };
+            for(let div of document.querySelectorAll('[show-info]')){
+                let field=div.getAttribute('show-info');
+                div.innerHTML=user[field];
+            }
+        </script> -->
+        <!-- <script>
+            .order[order-state="new"]{
+                color:green;
+            }
+            .order[order-state="pending"]{
+                color:blue;
+            }
+            .order[order-state="canceld"]{
+                color:red;
+            }
+        </script>
+        <div class="order" order-status="new"> A new order</div>
+        <div class="order" order-status="pending"> A pending order</div>
+        <div class="order" order-status="canceld"> A canceld</div>-->
+        <!-- div.setAttribute('order-state','canceld');; -->
+        <!-- <script>
+            alert(document.body.dataset.about);
+        </script> -->
+        <!-- <script>
+            // alert(document.body.dataset.about);
+            .order[data-order-status="new"]{
+               color:green;
+            }
+            .order[data-order-status=""]
+        </script>
+    </body> 
+
+</html> --> 
+<!-- <!DOCTYPE html>
+<html>
+<body>
+ <div data-widget-name="menu">Choose the genre</div>
+ <script>
+    let elem=document.querySelector('[data-widget-name]');
+    alert(elem.dataset.widgetName);
+    alert(elem.getAttribute('data-widget-name'));
+ </script>   
+</body>
+</html> -->
+<!-- <html>
+    <body>
+        <a name="list">the List</a>
+        <ul>
+            <li><a href="https://google.com">https://google.com</a></li>
+            <li><a href="/tutorial">/tutorial.html</a></li>
+            <li><a href="local/path">local/path</a></li>
+            <li><a href="local/path">local/path</a></li>
+            <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+            <li><a href="https://nodejs.org">https://nodejs.org</a></li>
+            <li><a href="https://internal.com/test">https://internal.com/test</a></li>
+        </ul>
+        <script>
+            let link=document.querySelector('a');
+            Link.style.color='orange';
+            ////////////////////
+        </script>
+    </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let link=document.querySelectorAll('a');
+       for(let link of links){
+        let href=link.getAttributes('href');
+        if(!href) continue;
+        if(!href.include('://'))continue;
+        if(href.startsWith('https://internal.com')) continue;
+        link.style.color='orange';
+        let selector='a[href*="://"]:not([herf^="https://internal.com"])';
+        link.forEach(link=>link.style.color='orange');
+       }
+    </script>
+</body>
+</html>
