@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="menu">Menu(click me)</button>
+    <button id="menu1">Menu(click me)</button>
+    <script>
+        menu.onclick=function(){
+            alert(1);
+            menu.dispatchEvent(new CustomEvent("menu-open",{
+               bubbles:true
+            }));
+            alert(2);
+        };
+        document.addEventListener('menu-open',()=>alert('nested'));
+    </script>
+    <script>
+        menu1.onclick=function(){
+            alert(1);
+            setTimeout(()=>menu.dispatchEvent(new CustomEvent("menu-open",{
+                bubbles:true
+            })));
+            alert(2);
+        };
+        document.addEventListener('menu-open',()=>alert('nested'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">Alt+shift+Click on me</button>
+    <script>
+        button.onclick=function(event){
+            if(event.altKey && event.shiftKey){
+                 alert('Hooray');
+            }
+        };
+    </script>
+</body>
+</html>

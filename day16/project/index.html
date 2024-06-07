@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+    <script>
+      document.onclick = function (e) {
+        coords.innerHTML = e.clientX + ":" + e.clientY;
+      };
+    </script>
+  </head>
+  <body>
+    click anywhere to get window coordinates.
+    <br />that's for testing to check the result you get by Javascript.
+    <br />
+    <div id="coords">(Click coordinates show up here)</div>
+    <div>
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      .
+    </div>
+    <div class="triangle-right" style="left:-20px;top: -176px;">1</div>
+    <div class="triangle-right" style="left:-10px;top: -178px;">2</div>
+    <div class="triangle-right" style="left: 190px;top:40px">4</div>
+    <div class="triangle-right" style="left: 200px;top: -42px;">2</div>
+  </body>
+  <script>
+     let fieldCoords=field.getBoundingClientRect();
+     let answer=[
+        [//1
+        fieldCoords.left,
+        fieldCoords.top
+        ],
+        [//2
+         fieldCoords.right,
+         fieldCoords.bottom
+        ],
+        [//3
+           fieldCoords.left+field.clientLeft,
+           fieldCoords.top+field.clintTop
+        ],
+        [//4
+            fieldCoords.left+fieldCoords.left + field.clientwidth,
+            fieldCoords.top + field.clintTop + field.clintHeight
+        ]
+      ];
+        alert(answer.join(' '));
+     
+  </script>
+</html>

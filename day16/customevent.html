@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="elem" onclick="alert('Click');">Autoclick</button>
+    <h1 id="elem">Hello from the script!</h1>
+     <h1 id="elem">Hello for john</h1>
+     <pre id="rabbit">
+        |\   /|
+         \|_|/
+         /. .\
+        =\_Y_/=
+         {>0<}
+     </pre>
+     <button onclick="hide()">HIDE()</button>
+    ///////////////////////////////////////////////////////////////////
+    <script>
+        let event=new Evnt ("click");
+        elem.dispatchEvent(event);
+    </script>
+    <script>
+        document.addEventListener("hrllo",function(event){
+            alert("Hello from"+ event.target.tagName);
+        });
+        let event1=new Event("hello",{bubbles:true});
+        elem.dispatchEvent(event);
+    </script>
+    <script>
+        let event2=new MouseEvent("click",{
+            bubbles:true,
+            cancelable:true,
+            clientX:100,
+            clientY:100
+        });
+        alert(event.clientX);
+        /////////////////////////
+        let event4=new Event("click",{
+            bubbles:true,
+            cancelable:true,
+            clientX:100,
+            clientY:100
+        });
+        alert(event.clientX);
+    </script>
+    <script>
+        elem.addEventListener("hello",{
+            function(event){
+                alert(event.details.name);
+            }
+        });
+        elem.dispatchEvent(new CustomEvent("hello",{
+            detail:{name:"john"}
+        }));
+    </script>
+    <script>
+        function hiden(){
+            let event =new CustomEvent("hide",{
+                cancelable:true
+            });
+            if(!rabbit.dispatchEvent(event)){
+                alert('the action was prevented by a handler');
+            }else{
+                rabbit.hidden=true;
+            }
+        }
+        rabbit.addEventListener('hide',function(event){
+            if(confirm("Call preventDefault")){
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <button id="button">click me</button>
+        <input onmousemove="this.value=event.clientX+':'+event.clientY" value="Mouse over me">
+        <span ondblclick="alert('dblclick')">Double-click <meta http-equiv="X-UA-Compatible" content="ie=edge"></span>
+        brfore....
+        <b onclick="alert('Click')" onomousedown="return false">Double-click me</b>
+        ....After
+        <div oncopy="alert('Copying forbiden ');return false">
+            Dear user,
+            The Copying is forbiden for you
+            If you know JS or HTML ,then you get everything from the page source though
+        </div>
+    </body>
+    <script>
+        button.onclick=function(event){
+            if(event.altKey && event.shiftKey){
+                alert('hii');
+            }
+        };
+    </script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="menu">
+        <button data-action="save">Save</button>
+        <button data-action="load">Load</button>
+        <button data-action="search">search</button>
+    </div>
+    <script>
+        class Menu{
+            constructor(elem){
+                this._elem=elem;
+                elem.onclick=this.onclick.bind(this);
+            }
+            save(){
+                alert('saving');
+            }
+            load()
+            {
+                alert('loading');
+            }
+            search(){
+                alert('searching');
+            }
+            onclick(event){
+                let action=event.target.dataset.action;
+                if(action){
+                    this[action]();
+                }
+            };
+        }
+        new Menu(menu);
+    </script>
+</body>
+</html>
