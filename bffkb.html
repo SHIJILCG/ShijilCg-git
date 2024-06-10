@@ -1,0 +1,18 @@
+function rotateArray(arr, k) {
+    if (arr.length < k) {
+      return "length is too short";
+    }
+    let arr1 = arr.splice(arr.length - k, arr.length);
+    let result = arr1.concat(arr);
+    return result;
+  }
+  function testRotateArray() {
+    let testCases = [
+      {
+        Input: [1, 2, 3, 4, 5],
+        k: 2,
+        Output: [4, 5, 1, 2, 3],
+      },
+      {
+        Input: [1, 2, 3, 4, 5],
+        k: 4,
