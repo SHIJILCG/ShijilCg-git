@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <button data-tool="you clicked here">Click here</button>
+    </body>
+    <script>
+      let tooltipElem;
+      document.onmouseover=function(event){
+       let target=event.target;
+       let tooltipHtml=target.dataset.tooltip;
+       if(!tooltip)return;
+       tooltipElem=document.createElement('div');
+       tooltipElem.innerHTML=tooltipHtml;
+       t
+      }
+    </script>
+</html>
