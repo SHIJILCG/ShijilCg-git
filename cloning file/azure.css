@@ -1,0 +1,62 @@
+body{
+    background-image:url('img/solution-background_mobile-2x.webp');
+}
+.brr1,.bar2,.bar3 {
+    width: 19px;
+    height: 1px;
+    background-color: #333;
+    margin: 6px 0;
+    margin-left: 20px;
+
+}
+.line-button{
+     display: inline-block;
+     cursor: pointer;
+     width: 48px;
+     height: 48px;
+     align-content: center;
+     
+}
+.Header{
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    display: flex;
+    border: radius 2px;
+    border-color: black;
+    width:100;
+    height: 54px;
+    background: rgb(255, 255, 255);
+}
+.part-2{
+    width: 270px;
+    height: 49px;
+    display: flex;
+    margin-left:20px;
+}
+.search-symbol{
+    margin: 12px;
+    align-items: center;
+}
+.micro-name{
+    margin-top: 3px;
+    display: flex;
+    width: 116px;
+    height: 44px;
+    align-content: center;
+    margin-left: 62px;
+    
+}
+.text1{
+    margin-left: 5px;
+    margin-top: 12px;
+    color: #504e4e;
+    font-size: larger;
+}
+/* .Header-bottom{
+    background-color: rgb(255, 255, 255);
+    width: 100;
+    height: 34px;
+    margin-left: -3px;
+    align-content: center;
+} */
