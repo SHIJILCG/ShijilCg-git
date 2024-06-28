@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll Bar with Images and Text</title>
+    
+</head>
+<body>
+    <div class="scroll-container">
+        <div class="scroll-item">
+            <img src="https://via.placeholder.com/150" alt="Image 1">
+            <p>Item 1 Description</p>
+        </div>
+        <div class="scroll-item">
+            <img src="https://via.placeholder.com/150" alt="Image 2">
+            <p>Item 2 Description</p>
+        </div>
+        <div class="scroll-item">
+            <img src="https://via.placeholder.com/150" alt="Image 3">
+            <p>Item 3 Description</p>
+        </div>
+        <div class="scroll-item">
+            <img src="https://via.placeholder.com/150" alt="Image 4">
+            <p>Item 4 Description</p>
+        </div>
+        <div class="scroll-item">
+            <img src="https://via.placeholder.com/150" alt="Image 5">
+            <p>Item 5 Description</p>
+        </div>
+        <div class="scroll-item">
+            <img src="https://via.placeholder.com/150" alt="Image 5">
+            <p>Item 5 Description</p>
+        </div>
+        <div class="scroll-item">
+            <img src="https://via.placeholder.com/150" alt="Image 5">
+            <p>Item 5 Description</p>
+        </div>
+        <div class="scroll-item">
+            <img src="https://via.placeholder.com/150" alt="Image 5">
+            <p>Item 5 Description</p>
+        </div>
+        <div class="scroll-item">
+            <img src="https://via.placeholder.com/150" alt="Image 5">
+            <p>Item 5 Description</p>
+        </div>
+        <div class="scroll-item">
+            <img src="https://via.placeholder.com/150" alt="Image 5">
+            <p>Item 5 Description</p>
+        </div>
+        <div class="scroll-item">
+            <img src="https://via.placeholder.com/150" alt="Image 5">
+            <p>Item 5 Description</p>
+        </div>
+        
+    </div>
+</body>
+<style>
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+.scroll-item {
+    display: inline-block;
+    width: 100px; /* Adjust based on your design */
+    margin: 0 10px;
+    text-align: center;
+}
+
+.scroll-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.scroll-item p {
+    margin-top: 10px;
+    color: #333;
+    font-size: 1em;
+}
+
+/* Optional: Customize scrollbar */
+.scroll-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+</style>
+</html>
