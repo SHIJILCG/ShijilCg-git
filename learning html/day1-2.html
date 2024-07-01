@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="day1.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML forms</h1>
+    <form action="">
+        <label for="username"> Enter Username:</label>
+        <input type="text" id="username" placeholder="your username" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="your email" required>
+        <br><br>
+        <label for="password">Enter Password</label>
+        <input type="password" id="password" placeholder="your password" required>
+        <br><br>
+        <p>Select your age:</p>
+        <form action="">
+             <label for="option-1">0-18</label>
+            <input type="radio" name="age" value="0-18" id="option-1">
+            <label for="option-2">18-30</label>
+            <input type="radio" name="age" value="18-30" id="option-2">
+            <label for="option-3">30-50</label>
+            <input type="radio" name="age" value="30-50" id="option-3">
+        </form>
+        <br><br>
+        <label for="question">Security Question</label>
+        <select name="Question" id="question">
+            <option value="q1">What color is your eyes?</option>
+            <option value="q2">What color is father name?</option>
+            <option value="q3">WHAT IS your pet name?</option>
+        </select>
+        <BR></BR><BR></BR>
+        <label for="question answers">Enter you answers</label>
+        <input type="text" id="question answers" name="answers">
+        <br><br>
+        <label for="bio">your bio</label><br>
+        <textarea name="bio" id="bio" cols="30" rows="30" placeholder="about you....."></textarea>
+        <input type="submit" value="submit the form">
+    </form>
+</body>
+</html>
