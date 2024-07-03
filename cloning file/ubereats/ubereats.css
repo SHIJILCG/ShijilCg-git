@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Flow Circular", system-ui;
+}
+.heade{
+  position: relative;
+  width: 100vw;
+  height:100vh;
+  min-height: 872px;
+  background-image: url(img/d8ceaf24a3164759.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.heade-top-part{
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 17.5px;
+    
+}
+.left-top-part {
+    display: inline-block;
+    text-align: center;
+    margin-top:10px;
+}
+.right-top-part{
+  display: flex;
+  margin-top: 6px;
+  gap: 11px;
+}
+.profile-button{
+    height: 36px;
+    width: 36px;
+    background-color: white;
+    border-radius: 20px;
+}
+.signup-button{
+    width: 73.69px;
+    height: 36px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 20px;
+    color: white;
+    font-size: 15px;
+    justify-content: center;
+}
+.heade-last-part{
+    margin-top: 65px;
+    width: 100%;
+}
+.heade-last-part-text{
+    font-weight: 800;
+    font-size:34px;  
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.addr-box{
+    display:flex;
+    width: 90%;
+    height:56px ;
+    background-color: white;
+    margin-top: 35px;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 387.77px;
+    align-items: center;
+    font-size:16px;
+    font-weight:300;
+}
+.time-box{
+    display:flex;
+    width: 90%;
+    height:56px ;
+    background-color: white;
+    margin:8px 5%;
+    max-width: 387.77px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+.time-box img:last-child{
+    margin-left: auto;
+}
+.search-box{
+    width: 90%;
+    height:56px ;
+    background-color: white;
+    margin:16px 5%;
+    max-width: 387.77px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-content: center;
+    border-radius: 8px;
+    font-size: 19px;
+}
+
+.addr-box p,.time-box p{
+    margin-left: 12px;
+}
+.addr-box img,.time-box img{
+    width: 24px;
+    height: 24px;
+    margin-left:16px ;
+}
+.sign-in-text{
+    margin:24px 5%; 
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+
