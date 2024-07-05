@@ -11,9 +11,10 @@
           <div class="heade-top-part">
               <div class="heade-top-part-svg-1"><img src="img/Three lines.svg" width="20" height="20" ></div>
               <div class="heade-top-part-svg-2"><img src="img/Uber Eats Home.svg" width="89.33" height="16"></div>
-              <div style="flex: 1;"></div>
+              <div style="flex: 1;" class="space-maker"></div>
               <div class="profile-button"><img src="img/svgexport-2.svg" width="16" height="16"></div>
-              <div class="signup-button"><p  id="ubertext-3">Sign up</p></div>
+              <div class="loginbutton"><p id="ubertext-4"> Log in</p></div>
+              <div class="signup-button"><p  id="ubertext-4">Sign up</p></div>
           </div>
           <div class="heade-last-part">
                <div class="heade-last-part-text"><p id="ubertext-1">Order delivery near you</p></div>
@@ -21,6 +22,14 @@
                 <img src="img/svgexport-3.svg" alt="">
                 <p id="ubertext-3">Enter delivery address</p>
                </div>
+               <!-- scroll time addr box-->
+               <div id="addrboxtop" class="search hidden">  
+                    <div class="addr-box-top" id="s">
+                       <img src="img/svgexport-3.svg" alt="">
+                       <p id="ubertext-3">Enter delivery address</p>
+                    </div>
+               </div>
+               <!---->
                <div class="time-box">
                 <div class="time-box-part-1">
                   <img src="img/svgexport-4.svg" alt="">
@@ -33,7 +42,28 @@
                <div class="search-box" ><p id="ubertext-4">Search here</p></div>
                <div class="sign-in-text"><p id="ubertext-4">Or <u>Sign In</u></p></div>
           </div>
+          <!--heade-last-part-desk-->
+          <div class="heade-last-part-desk">
+            <div class="heade-last-part-text"><p id="ubertext-1">Order delivery near you</p></div>
+                 <div class="heade-last-part-desk-flexe">
+                  <div class="addr-box">
+                    <img src="img/svgexport-3.svg" alt="">
+                    <p id="ubertext-3">Enter delivery address</p>
+                   </div> 
+                   <div class="time-box">
+                    <div class="time-box-part-1">
+                      <img src="img/svgexport-4.svg" alt="">
+                      <p id="ubertext-4">Deliver now</p>
+                    </div>
+                    <div class="time-box-part-2">
+                      <img src="img/svgexport-5.svg" alt="">
+                    </div>
+                 </div>
+                 <div class="search-box" ><p id="ubertext-4">Search here</p></div>
+            </div>
+            <div class="sign-in-text"><p id="ubertext-4">Or <u>Sign In</u></p></div>
        </div>
+       <!--end-->
    </header> 
    <div style="height: 32px;"></div> 
    <section>
@@ -41,11 +71,11 @@
             <div class="main-body-dowload">
                   <div class="main-body-dowload-part-1">
                     <img src="img/31ee382bd0e6ed84.svg" width="64px">
-                    <p id="ubertext-1">There's more to love in the Android app.</p>
+                    <p id="ubertext-1">There’s more to love in the Android app.</p>
                   </div>
                   <div class="main-body-dowload-part-2">
                     <img src="img/svgexport-1.svg" width="18px">
-                    <p id="ubertext-2">Get the app</p>
+                    <p id="ubertext-4">Get the app</p>
                   </div>
             </div> 
             <div style="height: 48px;"></div> 
@@ -53,19 +83,19 @@
                 <div class="item">
                   <img src="img/88d55f7112efe55f.webp">
                   <p class="item-p1" id="ubertext-1">Feed your employees</p>
-                  <p class="item-p2" id="ubertext-2"><a href="" style="color: black;">Create a business account</a></p>
+                  <p class="item-p2" id="ubertext-4"><a href="" style="color: black;">Create a business account</a></p>
                 </div>
                 <div style="height: 36px;"></div> 
                 <div class="item">
                   <img src="img/711d51ca1b458931.webp" alt="">
-                  <p class="item-p1" id="ubertext-1">Your restaurent,delivered</p>
-                  <p class="item-p2" id="ubertext-2"><a href="" style="color: black;">Add your restaurent</a></p>
+                  <p class="item-p1" id="ubertext-1">Your restaurant, delivered</p>
+                  <p class="item-p2" id="ubertext-4"><a href="" style="color: black;">Add your restaurant</a></p>
                 </div>
                 <div style="height: 36px;"></div> 
                 <div class="item">
                   <img src="img/16522a701585873b.webp" alt="">
                   <p class="item-p1" id="ubertext-1">Deliver with Uber Eats</p>
-                  <p class="item-p2" id="ubertext-2"><a href="" style="color: black;">Sign up to deliver</a></p>
+                  <p class="item-p2" id="ubertext-4"><a href="" style="color: black;">Sign up to deliver</a></p>
                 </div>
             </div> 
             <div style="height: 48px;"></div> 
@@ -75,85 +105,92 @@
     <div class="section-p"><p id="ubertext-1">Cities near me</p></div>
     <div class="map-img"></div>
       <div class="grid-div">
-           <div class="grid-divs"><p id="ubertext-2">Albuquerque</p></div>
-           <div class="grid-divs"><p id="ubertext-2">Conocord</p></div>
-           <div class="grid-divs"><p id="ubertext-2">Houston</p></div>
-           <div class="grid-divs"><p id="ubertext-2">Indianapolis</p></div>
-           <div class="grid-divs"><p id="ubertext-2">Mesa</p></div>
-           <div class="grid-divs"><p id="ubertext-2">Milwaukee</p></div>
-           <div class="grid-divs"><p id="ubertext-2">Nashille</p></div>
-           <div class="grid-divs"><p id="ubertext-2">Oklahoma City</p></div>
-           <div class="grid-divs"><p id="ubertext-2">Providence</p></div>
-           <div class="grid-divs"><p id="ubertext-2">Queens</p></div>
-           <div class="grid-divs"><p id="ubertext-2">Tucson</p></div>
-           <div class="grid-divs"><p id="ubertext-2">West Hollywood</p></div>
+           <div class="grid-divs"><p id="ubertext-3">Albuquerque</p></div>
+           <div class="grid-divs"><p id="ubertext-3">Concord</p></div>
+           <div class="grid-divs"><p id="ubertext-3">Houston</p></div>
+           <div class="grid-divs"><p id="ubertext-3">Indianapolis</p></div>
+           <div class="grid-divs"><p id="ubertext-3">Mesa</p></div>
+           <div class="grid-divs"><p id="ubertext-3">Milwaukee</p></div>
+           <div class="grid-divs"><p id="ubertext-3">Nashville</p></div>
+           <div class="grid-divs"><p id="ubertext-3">Oklahoma City</p></div>
+           <div class="grid-divs"><p id="ubertext-3">Providence</p></div>
+           <div class="grid-divs"><p id="ubertext-3">Queens</p></div>
+           <div class="grid-divs"><p id="ubertext-3">Tucson</p></div>
+           <div class="grid-divs"><p id="ubertext-3">West Hollywood</p></div>
       </div>  
       <div style="height: 24px;"></div>
-      <div class="section-p2"><a href="" style="color: black;"><p id="ubertext-2"1>View all 500+ cities</p></a></div>
+      <div class="section-p2"><a href="" style="color: black;"><p id="ubertext-4">View all 500+ cities</p></a></div>
 
       <div style="height: 48px;"></div>
       <div class="Countries-list">
       <div class="section-p3"><p id="ubertext-1">Countries with Uber Eats</p></div>
       <div class="grid-list-name">
-          <div><p id="ubertext-2">Australia</p></div>
-          <div><p id="ubertext-2">Belgium</p></div>
-          <div><p id="ubertext-2">Canada</p></div>
-          <div><p id="ubertext-2">Chile</p></div>
-          <div><p id="ubertext-2">Costa Rica</p></div>
-          <div><p id="ubertext-2">Dominican Republic</p></div>
-          <div><p id="ubertext-2">Ecuador</p></div>
-          <div><p id="ubertext-2">El Salvador</p></div>
-          <div><p id="ubertext-2">France</p></div>
-          <div><p id="ubertext-2">Germany</p></div>
-          <div><p id="ubertext-2">Guatemala</p></div>
-          <div><p id="ubertext-2">Lreland</p></div>
-          <div><p id="ubertext-2">Italy</p></div>
-          <div><p id="ubertext-2">Japan</p></div>
-          <div><p id="ubertext-2">Kenya</p></div>
-          <div><p id="ubertext-2">Netherlands</p></div>
-          <div><p id="ubertext-2">New Zealand</p></div>
-          <div><p id="ubertext-2">Panama</p></div>
-          <div><p id="ubertext-2">Poland</p></div>
-          <div><p id="ubertext-2">Portugal</p></div>
-          <div><p id="ubertext-2">South Africa</p></div>
-          <div><p id="ubertext-2">Spain</p></div>
-          <div><p id="ubertext-2">Sri Lanka</p></div>
-          <div><p id="ubertext-2">Sweden</p></div>
-          <div><p id="ubertext-2">Switzerland</p></div>
-          <div><p id="ubertext-2">Taiwan(ROC)</p></div>
-          <div><p id="ubertext-2">United Kingdom</p></div>
-          <div><p id="ubertext-2">United State</p></div>
+          <div><p id="ubertext-3">Australia</p></div>
+          <div><p id="ubertext-3">Belgium</p></div>
+          <div><p id="ubertext-3">Canada</p></div>
+          <div><p id="ubertext-3">Chile</p></div>
+          <div><p id="ubertext-3">Costa Rica</p></div>
+          <div><p id="ubertext-3">Dominican Republic</p></div>
+          <div><p id="ubertext-3">Ecuador</p></div>
+          <div><p id="ubertext-3">El Salvador</p></div>
+          <div><p id="ubertext-3">France</p></div>
+          <div><p id="ubertext-3">Germany</p></div>
+          <div><p id="ubertext-3">Guatemala</p></div>
+          <div><p id="ubertext-3">lreland</p></div>
+          <div><p id="ubertext-3">Italy</p></div>
+          <div><p id="ubertext-3">Japan</p></div>
+          <div><p id="ubertext-3">Kenya</p></div>
+          <div><p id="ubertext-3">Mexico</p></div>
+          <div><p id="ubertext-3">Netherlands</p></div>
+          <div><p id="ubertext-3">New Zealand</p></div>
+          <div><p id="ubertext-3">Panama</p></div>
+          <div><p id="ubertext-3">Poland</p></div>
+          <div><p id="ubertext-3">Portugal</p></div>
+          <div><p id="ubertext-3">South Africa</p></div>
+          <div><p id="ubertext-3">Spain</p></div>
+          <div><p id="ubertext-3">Sri Lanka</p></div>
+          <div><p id="ubertext-3">Sweden</p></div>
+          <div><p id="ubertext-3">Switzerland</p></div>
+          <div><p id="ubertext-3">Taiwan (ROC)</p></div>
+          <div><p id="ubertext-3">United Kingdom</p></div>
+          <div><p id="ubertext-3">United States</p></div>
       </div>
-      <div class="section-p4"><a href="" style="color: black;"><p id="ubertext-2">View all countries</p></a></div>
+      <div style="width: 100%;height: 24px;"></div>
+      <div class="section-p4"><a href="" style="color: black;"><p id="ubertext-4">View all countries</p></a></div>
     </div>
    </section>
    <footer>
      <div class="footer-uber-img"><img src="img/97c43f8974e6c876.svg" alt=""></div>
-     <div class="footer-apple-play-img"><img src="img/783bb4a82e5be29e.svg" style="width: 135px;height: 44px;"> <img src="img/163bdc9b0f1e7c9e.png" style="width: 135px;height: 44px;margin-left: 10px;"></div>
+     <div class="footer-apple-play-img"><img src="img/783bb4a82e5be29e.svg" style="width: 135px;height: 40px;margin-right: 12px;"> <img src="img/163bdc9b0f1e7c9e.png" style="width: 135px;height: 40px;"></div>
      <div class="footer-text-1"> 
-        <div><p id="ubertext-2">Get Help</p></div>
-        <div><p id="ubertext-2">Buy gift cards</p></div>
-        <div><p id="ubertext-2">Add your restaurent</p></div>
-        <div><p id="ubertext-2">Sign up to deliver</p></div>
-        <div><p id="ubertext-2">Create a business account</p></div>
-        <div><p id="ubertext-2">Promotions</p></div>
+        <div><p id="ubertext-3">Get Help</p></div>
+        <div><p id="ubertext-3">Buy gift cards</p></div>
+        <div><p id="ubertext-3">Add your restaurant</p></div>
+        <div><p id="ubertext-3">Sign up to deliver</p></div>
+        <div><p id="ubertext-3">Create a business account</p></div>
+        <div><p id="ubertext-3">Promotions</p></div>
      </div>
      <div class="footer-text-2"> 
-      <div><p id="ubertext-2">Restaurent near me</p></div>
-      <div><p id="ubertext-2">View all cities</p></div>
-      <div><p id="ubertext-2">View all countries</p></div>
-      <div><p id="ubertext-2">Pickup near me</p></div>
-      <div><p id="ubertext-2">About Uber Eats</p></div>
-      <div><p id="ubertext-2">Shop groceries</p></div>
-      <div style="display: flex;"><img src="" alt=""><p id="ubertext-2">English</p></div>
+      <div><p id="ubertext-3">Restaurants near me</p></div>
+      <div><p id="ubertext-3">View all cities</p></div>
+      <div><p id="ubertext-3">View all countries</p></div>
+      <div><p id="ubertext-3">Pickup near me</p></div>
+      <div><p id="ubertext-3">About Uber Eats</p></div>
+      <div><p id="ubertext-3">Shop groceries</p></div>
+      <div style="display: flex; gap: 8px;height:24px;align-items: center;"><img src="img/svgexport-10.svg" width="16px" height="16px"><p id="ubertext-3" style="margin-top: 15px;">English</p></div>
    </div>
+   <hr style="background-color: #f3f3f3;margin: 40px 0; border: none
+   ; height:1px;">
    <div class="footer-social-img"><img src="img/svgexport-11.svg"><img src="img/svgexport-12.svg"><img src="img/svgexport-13.svg"></div>
-   <div><p id="ubertext-2">privacy Policy</p></div>
-   <div><p id="ubertext-2">Terms</p></div>
-   <div><p id="ubertext-2">Do not sell or share my personal information</p></div>
-   <div><p id="ubertext-2">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p></div>
-   <div><img src=""><p id="ubertext-2">2024 Uber Technologies Inc.</p></div>
-   </footer>
-
+     <div class="footer-text-3"> 
+     <div><p id="ubertext-3">Privacy Policy</p></div>
+     <div><p id="ubertext-3">Terms</p></div>
+     <div><p id="ubertext-3">Pricing</p></div>
+     <div><p id="ubertext-3">Do not sell or share my personal information</p></div>
+     <div><p id="ubertext-3">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p></div>
+     <div><p id="ubertext-3">© 2024 Uber Technologies Inc.</p></div>
+    </div>
+   </footer>      
+   <script src="ubereats.js"></script>
 </body>
 </html> 
