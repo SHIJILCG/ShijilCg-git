@@ -14,14 +14,14 @@ document.addEventListener('scroll',function(){
      }else{
       headetoppartscroll.style.backgroundColor='transparent';
      }
-
-     const headetoppartaddrpart= document.querySelector('.find#heade-top-part-addr-part');
-     if(window.scrollY >100){
-        headetoppartaddrpart.classList.remove('hide');
-        headetoppartaddrpart.classList.add('show');
-     }else{
-        headetoppartaddrpart.classList.remove('show');
-        headetoppartaddrpart.classList.add('hide');
+     const headeto= document.querySelector('.find#heade-top-part-addr-part');
+     if(window.scrollY > 440){
+        headeto.classList.remove('hide');
+        headeto.classList.add('show');
+     } else {
+        headeto.classList.remove('show');
+        headeto.classList.add('hide');
      }
 });
+
 

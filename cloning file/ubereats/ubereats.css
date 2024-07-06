@@ -217,8 +217,6 @@
 /* end*/
 /* scroll time addr box in desktop-->*/
 #heade-top-part-addr-part{
-    display:flex;
-    display:none;
    background-color: #000;
    border-radius: 36px;
    gap: 4px;
@@ -244,8 +242,8 @@
     color: #fff;
     white-space: nowrap;
 }
-.show{
-    display: block;
+.show {
+    display:flex;
 }
 .hide{
     display:none;
@@ -501,6 +499,12 @@ footer{
       .footer-last-part-desktop-2{
         display: none;
      }
+     #heade-top-part-addr-part{
+        display: none;
+     }
+     .section-p3 .section-p3-p2{
+         display: none;
+     }
 }
 
 @media (min-width:1023px) {
@@ -640,33 +644,34 @@ footer{
       font-size: 28px;
       line-height:36px ;
       margin-bottom: 0;
+      margin-top: 8px;
    }
    .item-p2{
      margin-bottom: 0;
    }
-   .section-p{
+   .section-p,.section-p3{
       display: flex;
      justify-content: space-between;
      align-items: end;
+     margin-left: 40px;
+     margin-right: 40px;
    }
-   .section-p .section-p-p1{
+   .section-p .section-p-p1,.section-p3 .section-p3-p1{
       font-size:36px ;
       line-height: 44px;
       font-weight: 700;
-      margin-left: 40px;
-      margin-right: 40px;
    }
-   .section-p .section-p-p2{
+   .section-p .section-p-p2,.section-p3 .section-p3-p2{
       line-height: 20px;
       font-weight: 500;
       font-size: 16px;
-      margin-left: 40px;
-      margin-right: 25px;
    }
    .section-p3{
     font-size:36px ;
     line-height: 44px;
     font-weight: 700;
+    margin-left: 0;
+    margin-right: 0;
    }
    .section-p2,.section-p4{
         display: none;
@@ -677,7 +682,7 @@ footer{
    }
    footer{
     margin-top: 80px;
-    padding: 64px 40px 88px;
+    padding: 72px 40px 88px;
    }
    .grid-list-name{
       grid-template-columns: repeat(4,1fr);
@@ -688,6 +693,8 @@ footer{
    .footer-part-1{
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
+      max-width: 1200px;
+      margin: 0 auto;
    }
    .footer-text-1,.footer-text-2{
      margin-bottom: 0;
@@ -699,7 +706,7 @@ footer{
    .map-img{
     background: url(img/Screenshot\ from\ 2024-07-05\ 12-48-30.png);
     object-fit: cover;
-    margin:15px 40px;
+    margin:24px 40px;
     overflow: hidden; 
     background-position: center;
     background-repeat: no-repeat;
@@ -723,17 +730,25 @@ footer{
        -webkit-box-pack:justify;
        justify-content: space-between;
    }
+   .footer-images .footer-apple-play-img{
+      margin-bottom: 0;
+   }
    .footer-last-part-desktop-1{
       display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
       margin-top: 20px;
       gap: 40px;
       font-size: 14px;
       height: 36px;
    }
    .footer-last-part-desktop-2{
+    height:14px ;
     display: flex;
     gap: 40px;
     font-size: 14px;
+    max-width: 1200px;
+    margin: 0 auto;
  }
 }
 
